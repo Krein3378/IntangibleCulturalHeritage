@@ -1,43 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- 默认主题 -->
-    <!-- 主色 -->
-    <color name="colorPrimary">#DC4F4E</color>
+    <!-- 默认主题 - 中国风配色 -->
+    <!-- 主色 - 传统红色 -->
+    <color name="colorPrimary">#E74C3C</color>
     <!-- 状态栏颜色 -->
-    <color name="colorPrimaryDark">#DC4F4E</color>
+    <color name="colorPrimaryDark">#C0392B</color>
     <!-- 主题渐变起色 -->
-    <color name="colorPrimaryLight">#DC4F4E</color>
-    <!-- 强调色 -->
-    <color name="colorAccent">#d8371b</color>
+    <color name="colorPrimaryLight">#FF6B6B</color>
+    <!-- 强调色 - 金色 -->
+    <color name="colorAccent">#F39C12</color>
     <!-- 标题栏背景颜色 -->
-    <color name="colorToolbar">#B9B6E5</color>
+    <color name="colorToolbar">#E74C3C</color>
     <!-- 标题栏文字颜色 -->
     <color name="colorToolbarText">#FFFFFF</color>
     <!-- 标题栏图标颜色 -->
     <color name="colorToolbarIcon">#FFFFFF</color>
     <!-- 背景颜色 -->
-    <color name="colorLayout">#FEFEFE</color>
+    <color name="colorLayout">#FAFAFA</color>
     <!-- 默认背景颜色 -->
-    <color name="windowBackground">#FEFEFE</color>
+    <color name="windowBackground">#FAFAFA</color>
     <!-- 图标颜色 -->
-    <color name="colorIcon">#BFBFBF</color>
+    <color name="colorIcon">#95A5A6</color>
     <!-- 条目图标颜色 -->
-    <color name="colorIconItem">#A0A0A0</color>
+    <color name="colorIconItem">#7F8C8D</color>
     <!-- 按钮颜色 -->
-    <color name="colorButton">#7DE2FC</color>
+    <color name="colorButton">#3498DB</color>
     <!-- CardView 背景颜色 -->
-    <color name="colorCardLayout">#FAFAFA</color>
+    <color name="colorCardLayout">#FFFFFF</color>
     <!-- 文本颜色 -->
-    <color name="colorText">#03081A</color>
+    <color name="colorText">#2C3E50</color>
     <!-- 文本颜色（淡） -->
-    <color name="colorTextLight">#FAFAFA</color>
+    <color name="colorTextLight">#FFFFFF</color>
     <!-- 文本提示颜色 -->
-    <color name="colorTextHint">#878B99</color>
+    <color name="colorTextHint">#BDC3C7</color>
     <!-- 对话框背景颜色 -->
-    <color name="colorDialogLayout">#FAFAFA</color>
+    <color name="colorDialogLayout">#FFFFFF</color>
     <!-- 分割线颜色 -->
-    <color name="colorDivider">#F0F0F0</color>
+    <color name="colorDivider">#ECF0F1</color>
+
+    <!-- 新增功能色彩 -->
+    <!-- 3D交互主题色 -->
+    <color name="color3DTheme">#8E44AD</color>
+    <!-- 文化展示主题色 -->
+    <color name="colorCulture">#E67E22</color>
+    <!-- 学习主题色 -->
+    <color name="colorLearning">#27AE60</color>
+    <!-- 社区主题色 -->
+    <color name="colorCommunity">#2980B9</color>
+    <!-- 渐变起始色 -->
+    <color name="gradientStart">#E74C3C</color>
+    <!-- 渐变结束色 -->
+    <color name="gradientEnd">#F39C12</color>
+    <!-- 卡片阴影色 -->
+    <color name="cardShadow">#20000000</color>
+    <!-- 高亮色 -->
+    <color name="colorHighlight">#FFD700</color>
 
 
     <!-- 黑暗模式主题 -->

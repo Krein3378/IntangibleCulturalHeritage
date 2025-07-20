@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<!--<auther>允</auther>-->
+<!--<create>1621995275</create>-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="author" content="http://www.fractal-technology.com">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>世界的记忆中国传统音乐录音档案中国艺术研究院-讲坛</title>
+    <meta name="keywords" content="世界的记忆中国传统音乐录音档案中国艺术研究院">
+    <meta name="description" content="世界的记忆中国传统音乐录音档案中国艺术研究院">
+    <script type="text/javascript">
+      if (!window.matchMedia) {
+        var el = document.createElement("div");
+        el.style.cssText =
+          "position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: #575757; z-index: 999999;";
+        el.innerHTML =
+          '<div style="position: absolute; top: 40%; left: 0; right: 0; margin: auto; width: 80%; font-family: Microsoft YaHei; font-size: 2em; font-weight: bold; text-align: center; color: #fff;">您当前使用的浏览器版本过低，<br>建议尽快升级您的浏览器，以获得更好的浏览体验！</div>';
+        document.documentElement.appendChild(el);
+      }
+    </script>
+    <link rel="stylesheet" href="../css/vendor.css">
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/hrb.css">
+  </head>
+  <body>
+<a href="/raylink_0"></a>
+    <div style="display: none"><img src="../image/share.png" alt=""></div>
+    <div class="topping-mod"><img src="../image/lys/png1.png" alt=""></div>
+    <div id="pop"></div>
+    <div id="app" class="x-layout">
+      <!-- <div id="header" class="x-header w"></div> -->
+      <x-header ref="header" class="x-header" pagetype="lecture"></x-header>
+      <div class="x-container">
+        <div class="pulpit">
+          <div class="pub_banner" v-if="Banners.length>0">
+            <div v-for="(item,index) in Banners" :key="index" class="slick-item">
+              <a :href="item.link == '' ? 'javascript:;' : item.link" :target="item.link == '' ? '':'_blank'" :style="item.link == '' ? 'cursor: default':'' "><div class="img" :style="'background-image: url('+item.pic+')'"></div></a>
+            </div>
+          </div>
+          <div class="cont" style="padding: 185px 0 100px">
+            <div class="x-wrap">
+              <div class="title"><div class="t">讲坛</div></div>
+              <div class="box1">
+                <div class="pub_search">
+                  <pub_search v-on:search="search"></pub_search>
+                  <hotword v-on:search="search" v-bind:type="4"></hotword>
+                </div>
+              </div>
+
+              <div class="box2">
+                <div class="pub_tit">
+                  <div class="tit">系列讲座推荐</div>
+                  <a href="class.html" class="more">更多</a>
+                </div>
+                <div class="pub_list1">
+                  <classdetails v-for="(item,index) in list" :key="index" v-bind:item="item" v-bind:isclass="true" style="cursor: pointer"></classdetails>
+                </div>
+              </div>
+
+              <div class="box3">
+                <div class="pub_tit">
+                  <div class="tit">专家</div>
+                  <a href="../person/index.htm" class="more">更多</a>
+                </div>
+                <div class="pub_list2">
+                  <personsdetails v-for="(item,index) in persons" :key="index" v-bind:item="item"></personsdetails>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <x-footer></x-footer>
+    </div>
+    <!-- inject:private:js -->
+
+    <script src="../utils/utils/lazyload.js"></script>
+    <script src="../utils/utils/lazyloadconfig.js"></script>
+    <!-- endinject -->
+    <script>
+      LazyLoad.js(lazyloadconfig, function () {
+        Vue.use(VueLazyload);
+        new Vue({
+          el: "#app",
+          data: {
+            title: "系列讲座",
+            list: [],
+            persons: [],
+            count: 0, //总页码
+            pagesize: 9, //当前页码
+            currentPage: 1, //当前页码
+            diypage: "", //自定义页码
+            countarry: { countarry: [], currentPage: 1 }, //分页
+            Banners: [], //分页
+            keyword: "", //分页
+            searchkeyword: "", //分页
+            time: 0, //分页
+            clicks: 0, //分页
+            orderwhere: [undefined, "up", "down"],
+            ismore: false,
+          },
+          mounted() {
+            this.getlist();
+            this.getpersons();
+            this.getBanners(1);
+          },
+          methods: {
+            transform(num) {
+              return transform(num);
+            },
+            toChinesNum(num) {
+              return toChinesNum(num);
+            },
+            getBanners() {
+              send(config.getBanners, "get", { pathKey: "讲坛" })
+                .then((res) => {
+                  this.Banners = res.data;
+                  setTimeout(() => {
+                    $(".pub_banner ").slick({
+                      autoplay: true,
+                      dots: true,
+                      arrows: true,
+                      speed: 1000,
+                    });
+                  }, 0);
+                })
+                .catch((error) => {
+                  console.log(error);
+                });
+            },
+            search(key) {
+              if (key && typeof key == "string") {
+                this.keyword = key;
+              } else {
+                this.searchkeyword = "";
+                this.keyword = "";
+              }
+              window.location.href =
+                "/lecture/results.html#/?keyword=" + this.keyword;
+            },
+            getlist() {
+              send(lecture.getRecommendClassList, "get", {})
+                .then((res) => {
+                  this.list = res;
+                })
+                .catch((error) => {
+                  console.log(error);
+                });
+            },
+            getpersons() {
+              send(person.getRecommendLecturerList, "get", {})
+                .then((res) => {
+                  this.persons = res;
+                })
+                .catch((error) => {
+                  console.log(error);
+                });
+            },
+          },
+        });
+      });
+    </script>
+    <!-- endinject -->
+  <script src="../js/hm.js"></script>
+</body>
+</html>

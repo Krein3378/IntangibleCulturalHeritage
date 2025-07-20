@@ -1,0 +1,844 @@
+Uri: https://www.ctmsa-cnaa.com/
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\index.htm
+Content Type: text/html
+
+Uri: https://www.ctmsa-cnaa.com/column/column.html
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\column\column.html
+Content Type: text/html
+
+Uri: https://www.ctmsa-cnaa.com/column/column_author.html
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\column\column_author.html
+Content Type: text/html
+
+Uri: https://www.ctmsa-cnaa.com/css/hrb.css
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\css\hrb.css
+Content Type: text/css
+
+Uri: https://www.ctmsa-cnaa.com/css/main.css
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\css\main.css
+Content Type: text/css
+
+Uri: https://www.ctmsa-cnaa.com/css/vendor.css
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\css\vendor.css
+Content Type: text/css
+
+Uri: https://www.ctmsa-cnaa.com/font/avian.eot
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\font\avian.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://www.ctmsa-cnaa.com/font/avian.eot?
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\font\avian-1.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://www.ctmsa-cnaa.com/font/avian.svg
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\font\avian.svg
+Content Type: image/svg+xml
+
+Uri: https://www.ctmsa-cnaa.com/font/avian.ttf
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\font\avian.ttf
+Content Type: application/octet-stream
+
+Uri: https://www.ctmsa-cnaa.com/font/avian.woff
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\font\avian.woff
+Content Type: font/woff
+
+Uri: https://www.ctmsa-cnaa.com/font/hanyi.eot
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\font\hanyi.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://www.ctmsa-cnaa.com/font/hanyi.eot?
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\font\hanyi-1.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://www.ctmsa-cnaa.com/font/hanyi.svg
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\font\hanyi.svg
+Content Type: image/svg+xml
+
+Uri: https://www.ctmsa-cnaa.com/font/hanyi.ttf
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\font\hanyi.ttf
+Content Type: application/octet-stream
+
+Uri: https://www.ctmsa-cnaa.com/font/hanyi.woff
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\font\hanyi.woff
+Content Type: font/woff
+
+Uri: https://www.ctmsa-cnaa.com/font/iconfont.eot
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\font\iconfont.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://www.ctmsa-cnaa.com/font/iconfont.eot?
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\font\iconfont-1.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://www.ctmsa-cnaa.com/font/iconfont.svg
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\font\iconfont.svg
+Content Type: image/svg+xml
+
+Uri: https://www.ctmsa-cnaa.com/font/iconfont.ttf
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\font\iconfont.ttf
+Content Type: application/octet-stream
+
+Uri: https://www.ctmsa-cnaa.com/font/iconfont.woff
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\font\iconfont.woff
+Content Type: font/woff
+
+Uri: https://www.ctmsa-cnaa.com/font/sy.eot
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\font\sy.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://www.ctmsa-cnaa.com/font/sy.eot?
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\font\sy-1.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://www.ctmsa-cnaa.com/font/sy.svg
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\font\sy.svg
+Content Type: image/svg+xml
+
+Uri: https://www.ctmsa-cnaa.com/font/sy.ttf
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\font\sy.ttf
+Content Type: application/octet-stream
+
+Uri: https://www.ctmsa-cnaa.com/font/sy.woff
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\font\sy.woff
+Content Type: font/woff
+
+Uri: https://www.ctmsa-cnaa.com/font/xfont.eot
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\font\xfont.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://www.ctmsa-cnaa.com/font/xfont.eot?
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\font\xfont-1.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://www.ctmsa-cnaa.com/font/xfont.svg
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\font\xfont.svg
+Content Type: image/svg+xml
+
+Uri: https://www.ctmsa-cnaa.com/font/xfont.ttf
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\font\xfont.ttf
+Content Type: application/octet-stream
+
+Uri: https://www.ctmsa-cnaa.com/font/xfont.woff
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\font\xfont.woff
+Content Type: font/woff
+
+Uri: https://www.ctmsa-cnaa.com/image/icon-police.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\icon-police.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/affirm.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\affirm.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/affirm1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\affirm1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/affirm2.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\affirm2.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/bg1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\bg1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/bg2.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\bg2.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/bg3.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\bg3.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/bg4.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\bg4.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/close2.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\close2.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/down.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\down.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon10-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon10-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon10.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon10.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon11.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon11.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon12-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon12-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon12.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon12.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon13.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon13.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon14.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon14.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon2-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon2-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon2.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon2.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon22.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon22.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon23-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon23-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon23-11.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon23-11.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon23-111.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon23-111.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon23.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon23.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon24-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon24-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon24.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon24.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon25-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon25-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon25.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon25.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon26-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon26-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon26.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon26.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon29.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon29.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon30-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon30-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon30.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon30.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon4.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon4.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon44-4.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon44-4.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon44.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon44.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon5.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon5.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon55-5.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon55-5.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon55.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon55.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon6.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon6.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon7.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon7.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon8.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon8.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon99.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon99.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/icon_102.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\icon_102.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/pause.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\pause.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/play.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\play.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/png44.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\png44.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/png55.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\png55.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/search.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\search.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/up.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\up.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lwr/wz_bj.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lwr\wz_bj.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/dot.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\dot.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/dot_cur.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\dot_cur.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/gf1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\gf1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/gf10.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\gf10.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/gf11.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\gf11.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/gf12.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\gf12.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/gf13.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\gf13.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/gf14.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\gf14.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/gf15.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\gf15.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/gf2.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\gf2.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/gf3.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\gf3.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/gf4.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\gf4.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/gf5.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\gf5.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/gf6.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\gf6.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/gf7.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\gf7.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/gf8.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\gf8.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/gf9.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\gf9.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/guide1.jpg
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\guide1.jpg
+Content Type: image/jpeg
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/guide2.jpg
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\guide2.jpg
+Content Type: image/jpeg
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/jura3-on.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\jura3-on.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/jura3.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\jura3.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/logo.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\logo.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/more1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\more1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/more2.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\more2.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/next1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\next1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/next2.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\next2.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/prev1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\prev1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/prev2.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\prev2.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lyj/tif.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lyj\tif.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lys/jpg19.jpg
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lys\jpg19.jpg
+Content Type: image/jpeg
+
+Uri: https://www.ctmsa-cnaa.com/image/lys/jpg20.jpg
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lys\jpg20.jpg
+Content Type: image/jpeg
+
+Uri: https://www.ctmsa-cnaa.com/image/lys/jpg20.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lys\jpg20.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lys/png1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lys\png1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lys/png2.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lys\png2.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lys/png3.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lys\png3.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lys/png4.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lys\png4.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lys/png5.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lys\png5.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lys/png6.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lys\png6.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/lys/png7.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\lys\png7.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/share.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\share.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/sign-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\sign-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/sign.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\sign.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/about_us2.jpg
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\about_us2.jpg
+Content Type: image/jpeg
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/back_add.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\back_add.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/back_yy1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\back_yy1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/close1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\close1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon3-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon3-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon3.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon3.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon30-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon30-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon4-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon4-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon4.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon4.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon5-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon5-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon5.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon5.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_add-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_add-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_add.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_add.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_close.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_close.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_close2.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_close2.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_d1-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_d1-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_d1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_d1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_d2-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_d2-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_d2.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_d2.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_d3.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_d3.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_d4-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_d4-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_d4.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_d4.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_dd-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_dd-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_dd.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_dd.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_del-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_del-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_del.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_del.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_dh-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_dh-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_dh.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_dh.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_e11.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_e11.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_empty-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_empty-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_empty.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_empty.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_gd1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_gd1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_h1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_h1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_h10.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_h10.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_h2.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_h2.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_h3-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_h3-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_h3.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_h3.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_h4.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_h4.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_h5.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_h5.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_h6-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_h6-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_h6.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_h6.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_h7.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_h7.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_h8-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_h8-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_h8.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_h8.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_h9-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_h9-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_h9.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_h9.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_m.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_m.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_qq2-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_qq2-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_qqq.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_qqq.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_see-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_see-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_see.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_see.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_sub-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_sub-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_sub.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_sub.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_sx-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_sx-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_sx.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_sx.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_wx2-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_wx2-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_wxx.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_wxx.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_x1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_x1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_x2.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_x2.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_xs0-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_xs0-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_xs0.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_xs0.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_yl.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_yl.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_zx-1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_zx-1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/icon_zx.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\icon_zx.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/syb/yuan_q.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\syb\yuan_q.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/xf/ico1.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\xf\ico1.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/xf/ico10.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\xf\ico10.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/xf/ico11.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\xf\ico11.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/xf/ico16.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\xf\ico16.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/xf/ico2.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\xf\ico2.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/xf/ico3.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\xf\ico3.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/xf/ico4.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\xf\ico4.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/xf/ico5.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\xf\ico5.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/xf/ico6.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\xf\ico6.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/xf/ico7.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\xf\ico7.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/xf/ico8.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\xf\ico8.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/image/xf/ico9.png
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\image\xf\ico9.png
+Content Type: image/png
+
+Uri: https://www.ctmsa-cnaa.com/js/Customcursors.min.js
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\js\Customcursors.min.js
+Content Type: application/javascript
+
+Uri: https://www.ctmsa-cnaa.com/js/hm.js
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\js\hm.js
+Content Type: application/javascript
+
+Uri: https://www.ctmsa-cnaa.com/lecture/class.html
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\lecture\class.html
+Content Type: text/html
+
+Uri: https://www.ctmsa-cnaa.com/lecture/index.html
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\lecture\index.html
+Content Type: text/html
+
+Uri: https://www.ctmsa-cnaa.com/person/
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\person\index.htm
+Content Type: text/html
+
+Uri: https://www.ctmsa-cnaa.com/person/index.html
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\person\index.html
+Content Type: text/html
+
+Uri: https://www.ctmsa-cnaa.com/special/special.html
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\special\special.html
+Content Type: text/html
+
+Uri: https://www.ctmsa-cnaa.com/utils/utils/lazyload.js
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\utils\utils\lazyload.js
+Content Type: application/javascript
+
+Uri: https://www.ctmsa-cnaa.com/utils/utils/lazyloadconfig.js
+File Name: D:\jetbra\暑期实训\爬虫\www.ctmsa-cnaa.com\utils\utils\lazyloadconfig.js
+Content Type: application/javascript
+

@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<!--<auther>李</auther>-->
+<!--<create>1622017615</create>-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="author" content="http://www.fractal-technology.com">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>世界的记忆中国传统音乐录音档案中国艺术研究院-系列讲座</title>
+    <meta name="keywords" content="世界的记忆中国传统音乐录音档案中国艺术研究院">
+    <meta name="description" content="世界的记忆中国传统音乐录音档案中国艺术研究院">
+    <script type="text/javascript">
+      if (!window.matchMedia) {
+        var el = document.createElement("div");
+        el.style.cssText =
+          "position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: #575757; z-index: 999999;";
+        el.innerHTML =
+          '<div style="position: absolute; top: 40%; left: 0; right: 0; margin: auto; width: 80%; font-family: Microsoft YaHei; font-size: 2em; font-weight: bold; text-align: center; color: #fff;">您当前使用的浏览器版本过低，<br>建议尽快升级您的浏览器，以获得更好的浏览体验！</div>';
+        document.documentElement.appendChild(el);
+      }
+    </script>
+    <link rel="stylesheet" href="../css/vendor.css">
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/hrb.css">
+    <link rel="stylesheet" href="../css/hrb.css">
+  </head>
+  <body>
+<a href="/raylink_0"></a>
+    <div style="display: none"><img src="../image/share.png" alt=""></div>
+    <div class="topping-mod"><img src="../image/lys/png1.png" alt=""></div>
+    <div id="pop"></div>
+    <div id="app" class="x-layout">
+      <x-header ref="header" class="x-header" pagetype="lecture"></x-header>
+      <div class="x-container">
+        <div class="lecture_list">
+          <div class="x-wrap">
+            <div class="title">
+              <div class="t">{{title}}</div>
+            </div>
+            <div class="ll1">
+              <div class="pub_search">
+                <pub_search v-on:search="search" v-bind:defkeyword="keyword"></pub_search>
+                <hotword v-on:search="search" v-bind:type="4"></hotword>
+              </div>
+            </div>
+            <div class="ll2">
+              <div class="sort sort1">
+                <div @click="order('clicks')" class="li l">
+                  <a href="javascript:;">点击量</a>
+                </div>
+                <div @click="order('time')" class="li ll">
+                  <a href="javascript:;">发布时间</a>
+                </div>
+              </div>
+              <div class="pub_list1">
+                <classdetails v-for="(item,index) in list" :key="index" v-bind:item="item" v-bind:isclass="true" style="cursor: pointer"></classdetails>
+                <div style="
+                    font-size: 20px;
+                    margin: auto;
+                    margin-top: 100px;
+                    text-align: center;
+                  " v-show="list.length<1 ">
+                  暂无数据
+                </div>
+              </div>
+              <page v-bind:countarry="countarry" v-bind:pagesize="pagesize" v-bind:currentpage="currentPage" v-bind:count="count" v-on:more="more" v-on:showalert="(title)=>{
+                        this.$refs.header.showalert(title, true);
+                      }" v-on:jumppage="jumppage" v-on:pagesize="setData" v-on:getlist="getlist"></page>
+            </div>
+          </div>
+        </div>
+      </div>
+      <x-footer></x-footer>
+    </div>
+    <script src="../utils/utils/lazyload.js"></script>
+    <script src="../utils/utils/lazyloadconfig.js"></script>
+    <script>
+      LazyLoad.js(lazyloadconfig, function () {
+        //Dev
+        Vue.use(VueLazyload);
+        new Vue({
+          el: "#app",
+          router,
+          data: {
+            title: "系列讲座",
+            list: [],
+            count: 0, //总页码
+            pagesize: 9, //当前页码
+            currentPage: 1, //当前页码
+            diypage: "", //自定义页码
+            countarry: { countarry: [], currentPage: 1 }, //分页
+            HotWords: [], //分页
+            keyword: "", //分页
+            searchkeyword: "", //分页
+            time: 0, //分页
+            clicks: 0, //分页
+            orderwhere: [undefined, "up", "down"],
+            ismore: false,
+          },
+          mounted() {
+            const { keyword } = this.$route.query;
+
+            this.keyword = keyword ? keyword : "";
+            this.searchkeyword = this.keyword;
+            this.getlist(1);
+          },
+          methods: {
+            transform(num) {
+              return transform(num);
+            },
+            toChinesNum(num) {
+              return toChinesNum(num);
+            },
+            more(currentPage) {
+              this.ismore = true;
+              this.getlist(currentPage);
+              setTimeout(() => {
+                this.ismore = false;
+              }, 1500);
+            },
+            setData({ key, index }) {
+              this[key] = index;
+              this.getlist(1);
+            },
+            jumppage(diypage) {
+              if (diypage > this.count) {
+                diypage = this.count;
+              }
+              this.getlist(diypage);
+            },
+            order(e) {
+              this[e]++;
+              this[e] = this[e] > 3 ? 1 : this[e];
+              console.log(this[e]);
+              this.getlist(1);
+            },
+            search(key) {
+              if (key && typeof key == "string") {
+                this.keyword = key;
+              } else {
+                this.searchkeyword = "";
+                this.keyword = "";
+              }
+              this.searchkeyword = this.keyword;
+              this.getlist(1);
+            },
+
+            getlist(page) {
+              let clicks = this.orderwhere[this.clicks];
+              let time = this.orderwhere[this.time];
+              let where = { pagesize: this.pagesize, page, clicks, time };
+              if (this.searchkeyword) {
+                where.name = this.searchkeyword;
+              }
+              send(lecture.getClassList, "get", where)
+                .then((res) => {
+                  this.currentPage = page;
+                  this.count = res.last_page * 1;
+                  // this.currentPage = res.currentPage;
+                  if (this.ismore) {
+                    this.list = this.list.concat(res.list);
+                  } else {
+                    this.list = res.list;
+                  }
+
+                  this.countarry = getpages(this.count, this.currentPage);
+                })
+                .catch((error) => {
+                  console.log(error);
+                  if (error.status == 401) {
+                    this.$refs.header.tologin(true, false);
+                    return;
+                  }
+                });
+            },
+          },
+        });
+        //Devend
+
+        $(".sort .l").click(function () {
+          if ($(".sort .l").hasClass("li")) {
+            $(".sort .l").removeClass("li");
+            $(".sort .l").addClass("l1");
+          } else if ($(".sort .l").hasClass("l1")) {
+            $(".sort .l").removeClass("l1");
+            $(".sort .l").addClass("l2");
+          } else if ($(".sort .l").hasClass("l2")) {
+            $(".sort .l").removeClass("l2");
+            $(".sort .l").addClass("li");
+          }
+        }); ///
+
+        $(".sort .ll").click(function () {
+          if ($(".sort .ll").hasClass("li")) {
+            $(".sort .ll").removeClass("li");
+            $(".sort .ll").addClass("l1");
+          } else if ($(".sort .ll").hasClass("l1")) {
+            $(".sort .ll").removeClass("l1");
+            $(".sort .ll").addClass("l2");
+          } else if ($(".sort .ll").hasClass("l2")) {
+            $(".sort .ll").removeClass("l2");
+            $(".sort .ll").addClass("li");
+          }
+        }); ///
+      });
+    </script>
+  <script src="../js/hm.js"></script>
+</body>
+</html>

@@ -1,0 +1,2017 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国传统文化档案 - 世界的记忆</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background: #000;
+            color: #fff;
+            overflow: hidden;
+            cursor: none;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        /* 自定义光标 */
+        .cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.1s ease;
+        }
+
+        .cursor-follower {
+            width: 8px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.15s ease;
+        }
+
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background: #000;
+            overflow: hidden;
+        }
+
+        /* 背景图层 */
+        .bg-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .bg-image {
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.8;
+            transition: all 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        /* 背景图片定位 - 稍微大一点 */
+        .bg-gf2 {
+            top: 2%;
+            left: 2%;
+            width: 400px;
+            height: 280px;
+            background-image: url('www.ctmsa-cnaa.com/image/lyj/gf2.png');
+        }
+
+        .bg-gf3 {
+            top: 5%;
+            right: 5%;
+            width: 350px;
+            height: 250px;
+            background-image: url('www.ctmsa-cnaa.com/image/lyj/gf3.png');
+        }
+
+        .bg-gf4 {
+            bottom: 8%;
+            left: 5%;
+            width: 380px;
+            height: 300px;
+            background-image: url('www.ctmsa-cnaa.com/image/lyj/gf4.png');
+        }
+
+        .bg-gf5 {
+            right: 3%;
+            top: 35%;
+            width: 280px;
+            height: 200px;
+            background-image: url('www.ctmsa-cnaa.com/image/lyj/gf5.png');
+        }
+
+        .bg-gf6 {
+            left: 8%;
+            top: 50%;
+            width: 420px;
+            height: 320px;
+            background-image: url('www.ctmsa-cnaa.com/image/lyj/gf6.png');
+        }
+
+        .bg-gf7 {
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 250px;
+            height: 180px;
+            background-image: url('www.ctmsa-cnaa.com/image/lyj/gf7.png');
+        }
+
+        .bg-gf8 {
+            bottom: 15%;
+            right: 8%;
+            width: 320px;
+            height: 240px;
+            background-image: url('www.ctmsa-cnaa.com/image/lyj/gf8.png');
+        }
+
+        .bg-gf9 {
+            top: 60%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 360px;
+            height: 280px;
+            background-image: url('www.ctmsa-cnaa.com/image/lyj/gf9.png');
+        }
+
+        .bg-gf10 {
+            top: 25%;
+            left: 20%;
+            width: 340px;
+            height: 260px;
+            background-image: url('www.ctmsa-cnaa.com/image/lyj/gf10.png');
+        }
+
+        .bg-gf11 {
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 220px;
+            background-image: url('www.ctmsa-cnaa.com/image/lyj/gf11.png');
+        }
+
+        .bg-gf12 {
+            top: 40%;
+            right: 15%;
+            width: 380px;
+            height: 300px;
+            background-image: url('www.ctmsa-cnaa.com/image/lyj/gf12.png');
+        }
+
+        .bg-gf13 {
+            top: 10%;
+            left: 30%;
+            width: 220px;
+            height: 160px;
+            background-image: url('www.ctmsa-cnaa.com/image/lyj/gf13.png');
+        }
+
+        .bg-gf14 {
+            bottom: 25%;
+            left: 8%;
+            width: 400px;
+            height: 320px;
+            background-image: url('www.ctmsa-cnaa.com/image/lyj/gf14.png');
+        }
+
+        .bg-gf15 {
+            top: 70%;
+            right: 8%;
+            width: 340px;
+            height: 260px;
+            background-image: url('www.ctmsa-cnaa.com/image/lyj/gf15.png');
+        }
+
+        /* 滑动效果类 */
+        .slide-out {
+            transform: scale(1.5) translate(var(--slide-x, 0), var(--slide-y, 0)) !important;
+            opacity: 0 !important;
+        }
+
+        /* 主要内容 */
+        .main-content {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            transition: all 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        .main-content.slide-out {
+            transform: scale(0.8);
+            opacity: 0;
+        }
+
+        .logo {
+            width: 120px;
+            height: 60px;
+            margin-bottom: 2rem;
+            background-image: url('www.ctmsa-cnaa.com/image/lyj/logo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { filter: brightness(1) drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); }
+            to { filter: brightness(1.2) drop-shadow(0 0 20px rgba(255, 255, 255, 0.8)); }
+        }
+
+        .main-title {
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(45deg, #fff, #f0f0f0, #fff);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .subtitle {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .english-title {
+            font-size: 2.5rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .english-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .seal {
+            width: 100px;
+            height: 100px;
+            margin: 1rem auto;
+            background-image: url('www.ctmsa-cnaa.com/image/lyj/tif.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            animation: sealGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes sealGlow {
+            from { filter: brightness(1) drop-shadow(0 0 10px rgba(255, 0, 0, 0.3)); }
+            to { filter: brightness(1.3) drop-shadow(0 0 20px rgba(255, 0, 0, 0.6)); }
+        }
+
+        .enter-button {
+            background: linear-gradient(45deg, #fff, #f0f0f0);
+            color: #000;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+            margin-top: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .enter-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .enter-button:hover::before {
+            left: 100%;
+        }
+
+        .enter-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+        }
+
+        /* 导航和图标 */
+        .nav-icons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 20px;
+            z-index: 20;
+            transition: all 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        .nav-icons.slide-out {
+            transform: translateX(100px);
+            opacity: 0;
+        }
+
+        .menu-icon {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .menu-line {
+            width: 100%;
+            height: 3px;
+            background: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .avatar-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .avatar-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* 导航菜单 */
+        .nav-menu {
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background: rgba(0, 0, 0, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            min-width: 200px;
+            max-width: 250px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-20px);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-menu.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .nav-menu::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            right: 15px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid rgba(0, 0, 0, 0.9);
+        }
+
+        .nav-menu-item {
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .nav-menu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .nav-menu-title {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 8px 0;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-menu-title:hover {
+            color: #D3AC4F;
+            transform: translateX(5px);
+        }
+
+        .nav-menu-title::after {
+            content: '›';
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-menu-title:hover::after {
+            transform: rotate(90deg);
+        }
+
+        .nav-submenu {
+            position: absolute;
+            right: 100%;
+            top: 0;
+            background: rgba(0, 0, 0, 0.95);
+            border-radius: 8px;
+            padding: 15px;
+            min-width: 180px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(10px);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-menu-item:hover .nav-submenu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+
+        .nav-submenu::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            right: -8px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 8px solid rgba(0, 0, 0, 0.95);
+        }
+
+        .nav-submenu-item {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .nav-submenu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .nav-submenu-link {
+            color: #fff;
+            font-size: 14px;
+            text-decoration: none;
+            padding: 6px 0;
+            display: block;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+            padding-left: 10px;
+        }
+
+        .nav-submenu-link:hover {
+            color: #D3AC4F;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        /* 用户菜单 */
+        .user-menu {
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background: rgba(0, 0, 0, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-20px);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .user-menu.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .user-menu::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            right: 15px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid rgba(0, 0, 0, 0.9);
+        }
+
+        .user-info {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .user-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 10px;
+        }
+
+        .user-name {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .user-email {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 12px;
+        }
+
+        .user-menu-item {
+            margin-bottom: 10px;
+        }
+
+        .user-menu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .user-menu-link {
+            color: #fff;
+            font-size: 14px;
+            text-decoration: none;
+            padding: 8px 0;
+            display: block;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+            padding-left: 10px;
+        }
+
+        .user-menu-link:hover {
+            color: #D3AC4F;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        /* 登录注册模态框 */
+        .auth-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .auth-modal.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .auth-container {
+            background: rgba(0, 0, 0, 0.95);
+            border-radius: 15px;
+            padding: 40px;
+            min-width: 400px;
+            max-width: 500px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transform: scale(0.8);
+            transition: all 0.3s ease;
+        }
+
+        .auth-modal.show .auth-container {
+            transform: scale(1);
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .auth-title {
+            color: #fff;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .auth-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+
+        .auth-form {
+            display: none;
+        }
+
+        .auth-form.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            color: #fff;
+            font-size: 14px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #D3AC4F;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .form-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .auth-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(45deg, #D3AC4F, #f0c040);
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+        }
+
+        .auth-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(211, 172, 79, 0.3);
+        }
+
+        .auth-switch {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+
+        .auth-switch-link {
+            color: #D3AC4F;
+            text-decoration: none;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        .auth-switch-link:hover {
+            text-decoration: underline;
+        }
+
+        .auth-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .auth-close:hover {
+            color: #fff;
+        }
+
+        .social-login {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-menu {
+                right: -50px;
+                min-width: 180px;
+                max-width: 200px;
+            }
+            
+            .nav-submenu {
+                right: 100%;
+                min-width: 160px;
+            }
+            
+            .nav-menu-title {
+                font-size: 14px;
+            }
+            
+            .nav-submenu-link {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-menu {
+                right: -80px;
+                min-width: 160px;
+                max-width: 180px;
+            }
+            
+            .nav-submenu {
+                right: 100%;
+                min-width: 140px;
+            }
+        }
+
+        .language-option {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 0.8rem;
+            opacity: 0.6;
+            cursor: pointer;
+            transition: all 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        .language-option:hover {
+            opacity: 1;
+        }
+
+        .language-option.slide-out {
+            transform: translateX(100px);
+            opacity: 0;
+        }
+
+        /* 音乐波纹效果 */
+        .music-waves {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 3px;
+            z-index: 5;
+            transition: all 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        .music-waves.slide-out {
+            transform: translateX(-50%) scale(0.5);
+            opacity: 0;
+        }
+
+        .wave {
+            width: 3px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+            animation: wave 1.5s ease-in-out infinite;
+        }
+
+        .wave:nth-child(1) { animation-delay: 0s; }
+        .wave:nth-child(2) { animation-delay: 0.1s; }
+        .wave:nth-child(3) { animation-delay: 0.2s; }
+        .wave:nth-child(4) { animation-delay: 0.3s; }
+        .wave:nth-child(5) { animation-delay: 0.4s; }
+
+        @keyframes wave {
+            0%, 100% { height: 10px; }
+            50% { height: 30px; }
+        }
+
+        /* 鼠标移动效果 */
+        .parallax-element {
+            transition: transform 0.1s ease;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .english-title {
+                font-size: 1.8rem;
+            }
+            
+            .english-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .bg-image {
+                transform: scale(0.8);
+            }
+        }
+
+        /* 加载动画 */
+        .fade-in {
+            animation: fadeIn 2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- 自定义光标 -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <div class="container">
+        <!-- 背景图层 -->
+        <div class="bg-layer">
+            <div class="bg-image bg-gf2 parallax-element"></div>
+            <div class="bg-image bg-gf3 parallax-element"></div>
+            <div class="bg-image bg-gf4 parallax-element"></div>
+            <div class="bg-image bg-gf5 parallax-element"></div>
+            <div class="bg-image bg-gf6 parallax-element"></div>
+            <div class="bg-image bg-gf7 parallax-element"></div>
+            <div class="bg-image bg-gf8 parallax-element"></div>
+            <div class="bg-image bg-gf9 parallax-element"></div>
+            <div class="bg-image bg-gf10 parallax-element"></div>
+            <div class="bg-image bg-gf11 parallax-element"></div>
+            <div class="bg-image bg-gf12 parallax-element"></div>
+            <div class="bg-image bg-gf13 parallax-element"></div>
+            <div class="bg-image bg-gf14 parallax-element"></div>
+            <div class="bg-image bg-gf15 parallax-element"></div>
+        </div>
+
+        <!-- 导航图标 -->
+        <div class="nav-icons">
+            <div class="menu-icon" id="menuIcon">
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+            </div>
+            <div class="avatar-icon" id="avatarIcon">👤</div>
+            
+            <!-- 用户菜单 -->
+            <div class="user-menu" id="userMenu">
+                <div class="user-info" id="userInfo">
+                    <div class="user-avatar">👤</div>
+                    <div class="user-name">游客</div>
+                    <div class="user-email">点击头像登录</div>
+                </div>
+                <div class="user-menu-item">
+                    <a href="#" class="user-menu-link" id="loginBtn">登录/注册</a>
+                </div>
+                <div class="user-menu-item">
+                    <a href="#" class="user-menu-link" id="profileBtn" style="display: none;">个人资料</a>
+                </div>
+                <div class="user-menu-item">
+                    <a href="#" class="user-menu-link" id="settingsBtn" style="display: none;">设置</a>
+                </div>
+                <div class="user-menu-item">
+                    <a href="#" class="user-menu-link" id="logoutBtn" style="display: none;">退出登录</a>
+                </div>
+            </div>
+            
+            <!-- 导航菜单 -->
+            <div class="nav-menu" id="navMenu">
+                <div class="nav-menu-item">
+                    <div class="nav-menu-title">首页</div>
+                    <div class="nav-submenu">
+                        <div class="nav-submenu-item">
+                            <a href="index.html" class="nav-submenu-link" data-page="main">网站首页</a>
+                        </div>
+                        <div class="nav-submenu-item">
+                            <a href="start.html" class="nav-submenu-link" data-page="start">启动页面</a>
+                        </div>
+                        <div class="nav-submenu-item">
+                            <a href="ctmsa-slide-out.html" class="nav-submenu-link" data-page="slide">滑动版本</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nav-menu-item">
+                    <div class="nav-menu-title">资源</div>
+                    <div class="nav-submenu">
+                        <div class="nav-submenu-item">
+                            <a href="index-film-simple.html" class="nav-submenu-link" data-page="film">胶片展示</a>
+                        </div>
+                        <div class="nav-submenu-item">
+                            <a href="ctmsa-fullscreen.html" class="nav-submenu-link" data-page="fullscreen">全屏版本</a>
+                        </div>
+                        <div class="nav-submenu-item">
+                            <a href="ctmsa-real-images.html" class="nav-submenu-link" data-page="real-images">真实图片</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nav-menu-item">
+                    <div class="nav-menu-title">艺术家</div>
+                    <div class="nav-submenu">
+                        <div class="nav-submenu-item">
+                            <a href="#" class="nav-submenu-link" data-page="craftsman">传统工艺师</a>
+                        </div>
+                        <div class="nav-submenu-item">
+                            <a href="#" class="nav-submenu-link" data-page="musician">音乐传承人</a>
+                        </div>
+                        <div class="nav-submenu-item">
+                            <a href="#" class="nav-submenu-link" data-page="dancer">舞蹈艺术家</a>
+                        </div>
+                        <div class="nav-submenu-item">
+                            <a href="#" class="nav-submenu-link" data-page="painter">绘画大师</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nav-menu-item">
+                    <div class="nav-menu-title">创意</div>
+                    <div class="nav-submenu">
+                        <div class="nav-submenu-item">
+                            <a href="#" class="nav-submenu-link" data-page="3d-experience">3D体验</a>
+                        </div>
+                        <div class="nav-submenu-item">
+                            <a href="#" class="nav-submenu-link" data-page="vr-show">VR展示</a>
+                        </div>
+                        <div class="nav-submenu-item">
+                            <a href="#" class="nav-submenu-link" data-page="interactive-game">互动游戏</a>
+                        </div>
+                        <div class="nav-submenu-item">
+                            <a href="#" class="nav-submenu-link" data-page="digital-exhibition">数字展览</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nav-menu-item">
+                    <div class="nav-menu-title">文化</div>
+                    <div class="nav-submenu">
+                        <div class="nav-submenu-item">
+                            <a href="#" class="nav-submenu-link" data-page="architecture">传统建筑</a>
+                        </div>
+                        <div class="nav-submenu-item">
+                            <a href="#" class="nav-submenu-link" data-page="costume">传统服饰</a>
+                        </div>
+                        <div class="nav-submenu-item">
+                            <a href="#" class="nav-submenu-link" data-page="instrument">传统乐器</a>
+                        </div>
+                        <div class="nav-submenu-item">
+                            <a href="#" class="nav-submenu-link" data-page="craft">传统工艺</a>
+                        </div>
+                        <div class="nav-submenu-item">
+                            <a href="#" class="nav-submenu-link" data-page="dance">传统舞蹈</a>
+                        </div>
+                        <div class="nav-submenu-item">
+                            <a href="#" class="nav-submenu-link" data-page="painting">传统绘画</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nav-menu-item">
+                    <div class="nav-menu-title">关于</div>
+                    <div class="nav-submenu">
+                        <div class="nav-submenu-item">
+                            <a href="#" class="nav-submenu-link" data-page="about">关于我们</a>
+                        </div>
+                        <div class="nav-submenu-item">
+                            <a href="#" class="nav-submenu-link" data-page="contact">联系方式</a>
+                        </div>
+                        <div class="nav-submenu-item">
+                            <a href="#" class="nav-submenu-link" data-page="help">帮助中心</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主要内容 -->
+        <div class="main-content">
+            <div class="logo fade-in"></div>
+            
+            <div class="subtitle fade-in">世界的记忆</div>
+            <div class="english-subtitle fade-in">Memory of the World</div>
+            
+            <div class="main-title fade-in">中国传统文化档案</div>
+            <div class="english-title fade-in">Chinese Traditional Culture Archives</div>
+            
+            <div class="seal fade-in"></div>
+            
+            <button class="enter-button fade-in" id="enterButton">进入</button>
+        </div>
+
+        <!-- 音乐波纹 -->
+        <div class="music-waves">
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+        </div>
+        
+        <div class="language-option">拼英简        </div>
+    </div>
+
+    <!-- 登录注册模态框 -->
+    <div class="auth-modal" id="authModal">
+        <div class="auth-container">
+            <div class="auth-close" id="authClose">&times;</div>
+            
+            <!-- 登录表单 -->
+            <div class="auth-form active" id="loginForm">
+                <div class="auth-header">
+                    <div class="auth-title">欢迎回来</div>
+                    <div class="auth-subtitle">登录您的账户</div>
+                </div>
+                <form id="loginFormElement">
+                    <div class="form-group">
+                        <label class="form-label">邮箱</label>
+                        <input type="email" class="form-input" placeholder="请输入邮箱" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">密码</label>
+                        <input type="password" class="form-input" placeholder="请输入密码" required>
+                    </div>
+                    <button type="submit" class="auth-btn">登录</button>
+                </form>
+                <div class="auth-switch">
+                    还没有账户？<span class="auth-switch-link" id="switchToRegister">立即注册</span>
+                </div>
+                <div class="social-login">
+                    <a href="#" class="social-btn">微信</a>
+                    <a href="#" class="social-btn">QQ</a>
+                    <a href="#" class="social-btn">微博</a>
+                </div>
+            </div>
+            
+            <!-- 注册表单 -->
+            <div class="auth-form" id="registerForm">
+                <div class="auth-header">
+                    <div class="auth-title">创建账户</div>
+                    <div class="auth-subtitle">加入我们的文化社区</div>
+                </div>
+                <form id="registerFormElement">
+                    <div class="form-group">
+                        <label class="form-label">用户名</label>
+                        <input type="text" class="form-input" placeholder="请输入用户名" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">邮箱</label>
+                        <input type="email" class="form-input" placeholder="请输入邮箱" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">密码</label>
+                        <input type="password" class="form-input" placeholder="请输入密码" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">确认密码</label>
+                        <input type="password" class="form-input" placeholder="请再次输入密码" required>
+                    </div>
+                    <button type="submit" class="auth-btn">注册</button>
+                </form>
+                <div class="auth-switch">
+                    已有账户？<span class="auth-switch-link" id="switchToLogin">立即登录</span>
+                </div>
+                <div class="social-login">
+                    <a href="#" class="social-btn">微信</a>
+                    <a href="#" class="social-btn">QQ</a>
+                    <a href="#" class="social-btn">微博</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 页面加载完成后显示
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+
+        // 自定义光标
+        const cursor = document.querySelector('.cursor');
+        const cursorFollower = document.querySelector('.cursor-follower');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            setTimeout(() => {
+                cursorFollower.style.left = e.clientX + 'px';
+                cursorFollower.style.top = e.clientY + 'px';
+            }, 50);
+        });
+
+        // 鼠标移动视差效果
+        const parallaxElements = document.querySelectorAll('.parallax-element');
+        
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+            
+            parallaxElements.forEach((element, index) => {
+                const speed = (index + 1) * 0.2;
+                const x = (mouseX - 0.5) * speed * 20;
+                const y = (mouseY - 0.5) * speed * 20;
+                
+                element.style.transform = `translate(${x}px, ${y}px) rotate(${x * 0.3}deg)`;
+            });
+        });
+
+        // 向外滑动效果
+        const enterButton = document.getElementById('enterButton');
+        const bgImages = document.querySelectorAll('.bg-image');
+        const mainContent = document.querySelector('.main-content');
+        const navIcons = document.querySelector('.nav-icons');
+        const languageOption = document.querySelector('.language-option');
+        const musicWaves = document.querySelector('.music-waves');
+
+        enterButton.addEventListener('click', () => {
+            // 添加点击动画
+            enterButton.style.transform = 'scale(0.95)';
+            
+            // 计算每个图片的滑动方向
+            bgImages.forEach((image, index) => {
+                const rect = image.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                
+                // 计算从屏幕中心到图片中心的方向
+                const screenCenterX = window.innerWidth / 2;
+                const screenCenterY = window.innerHeight / 2;
+                
+                const deltaX = centerX - screenCenterX;
+                const deltaY = centerY - screenCenterY;
+                
+                // 标准化方向向量
+                const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+                const normalizedX = deltaX / distance;
+                const normalizedY = deltaY / distance;
+                
+                // 设置滑动距离（根据图片大小调整）
+                const slideDistance = Math.max(rect.width, rect.height) * 2;
+                
+                // 设置CSS变量
+                image.style.setProperty('--slide-x', `${normalizedX * slideDistance}px`);
+                image.style.setProperty('--slide-y', `${normalizedY * slideDistance}px`);
+                
+                // 添加延迟，创造波浪效果
+                setTimeout(() => {
+                    image.classList.add('slide-out');
+                }, index * 50);
+            });
+            
+            // 主要内容和其他元素也滑动
+            setTimeout(() => {
+                mainContent.classList.add('slide-out');
+                navIcons.classList.add('slide-out');
+                languageOption.classList.add('slide-out');
+                musicWaves.classList.add('slide-out');
+            }, 200);
+            
+            // 延迟跳转
+            setTimeout(() => {
+                window.location.href = 'index-film-simple.html';
+            }, 1500);
+        });
+
+        // 菜单图标悬停效果和点击事件
+        const menuIcon = document.getElementById('menuIcon');
+        const navMenu = document.getElementById('navMenu');
+        let isMenuOpen = false;
+
+        // 鼠标悬停显示菜单
+        menuIcon.addEventListener('mouseenter', () => {
+            menuIcon.querySelectorAll('.menu-line').forEach((line, index) => {
+                line.style.transform = `rotate(${(index + 1) * 45}deg)`;
+            });
+            navMenu.classList.add('show');
+            isMenuOpen = true;
+        });
+
+        // 鼠标离开隐藏菜单
+        menuIcon.addEventListener('mouseleave', () => {
+            menuIcon.querySelectorAll('.menu-line').forEach(line => {
+                line.style.transform = 'rotate(0deg)';
+            });
+            // 延迟隐藏，给用户时间移动到子菜单
+            setTimeout(() => {
+                if (!navMenu.matches(':hover')) {
+                    navMenu.classList.remove('show');
+                    isMenuOpen = false;
+                }
+            }, 100);
+        });
+
+        // 菜单区域鼠标事件
+        navMenu.addEventListener('mouseenter', () => {
+            isMenuOpen = true;
+        });
+
+        navMenu.addEventListener('mouseleave', () => {
+            navMenu.classList.remove('show');
+            isMenuOpen = false;
+        });
+
+        // 点击菜单图标切换菜单
+        menuIcon.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (isMenuOpen) {
+                navMenu.classList.remove('show');
+                isMenuOpen = false;
+            } else {
+                navMenu.classList.add('show');
+                isMenuOpen = true;
+            }
+        });
+
+        // 点击页面其他地方关闭菜单
+        document.addEventListener('click', (e) => {
+            if (!menuIcon.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('show');
+                isMenuOpen = false;
+            }
+        });
+
+        // 子菜单链接点击事件
+        document.querySelectorAll('.nav-submenu-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const href = link.getAttribute('href');
+                const pageType = link.getAttribute('data-page');
+                
+                // 添加点击动画
+                link.style.transform = 'scale(0.95)';
+                
+                // 根据页面类型执行不同功能
+                if (href && href !== '#') {
+                    // 有实际链接的页面直接跳转
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 200);
+                } else {
+                    // 没有链接的页面显示功能页面
+                    setTimeout(() => {
+                        showFeaturePage(pageType, link.textContent);
+                    }, 200);
+                }
+            });
+        });
+
+        // 显示功能页面
+        function showFeaturePage(pageType, title) {
+            // 创建功能页面模态框
+            const modal = document.createElement('div');
+            modal.className = 'feature-modal';
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            `;
+
+            // 根据页面类型生成内容
+            const content = generateFeatureContent(pageType, title);
+            
+            modal.innerHTML = `
+                <div class="feature-container" style="
+                    background: rgba(0, 0, 0, 0.95);
+                    border-radius: 15px;
+                    padding: 40px;
+                    max-width: 800px;
+                    max-height: 80vh;
+                    overflow-y: auto;
+                    backdrop-filter: blur(20px);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    position: relative;
+                    transform: scale(0.8);
+                    transition: transform 0.3s ease;
+                ">
+                    <div class="feature-close" style="
+                        position: absolute;
+                        top: 15px;
+                        right: 20px;
+                        color: rgba(255, 255, 255, 0.7);
+                        font-size: 24px;
+                        cursor: pointer;
+                        transition: color 0.3s ease;
+                    ">&times;</div>
+                    ${content}
+                </div>
+            `;
+
+            document.body.appendChild(modal);
+            
+            // 显示动画
+            setTimeout(() => {
+                modal.style.opacity = '1';
+                modal.querySelector('.feature-container').style.transform = 'scale(1)';
+            }, 10);
+
+            // 关闭事件
+            modal.querySelector('.feature-close').addEventListener('click', () => {
+                modal.style.opacity = '0';
+                modal.querySelector('.feature-container').style.transform = 'scale(0.8)';
+                setTimeout(() => {
+                    document.body.removeChild(modal);
+                }, 300);
+            });
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.opacity = '0';
+                    modal.querySelector('.feature-container').style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        document.body.removeChild(modal);
+                    }, 300);
+                }
+            });
+        }
+
+        // 生成功能页面内容
+        function generateFeatureContent(pageType, title) {
+            const contents = {
+                'craftsman': `
+                    <h2 style="color: #D3AC4F; font-size: 28px; margin-bottom: 20px; text-align: center;">传统工艺师</h2>
+                    <div style="color: #fff; line-height: 1.8;">
+                        <p style="margin-bottom: 15px;">传统工艺师是中华文化的重要传承者，他们用双手创造着精美的艺术品。</p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px;">
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">陶瓷工艺</h3>
+                                <p style="font-size: 14px;">景德镇陶瓷大师的精湛技艺</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">木雕工艺</h3>
+                                <p style="font-size: 14px;">东阳木雕的传统技法</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">刺绣工艺</h3>
+                                <p style="font-size: 14px;">苏绣、湘绣的精美艺术</p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                'musician': `
+                    <h2 style="color: #D3AC4F; font-size: 28px; margin-bottom: 20px; text-align: center;">音乐传承人</h2>
+                    <div style="color: #fff; line-height: 1.8;">
+                        <p style="margin-bottom: 15px;">音乐传承人守护着中华民族的音乐瑰宝，传承着千年的音乐文化。</p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px;">
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">古琴艺术</h3>
+                                <p style="font-size: 14px;">古琴大师的琴韵悠扬</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">昆曲传承</h3>
+                                <p style="font-size: 14px;">昆曲艺术家的精湛表演</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">民乐演奏</h3>
+                                <p style="font-size: 14px;">传统民乐的现代演绎</p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                'dancer': `
+                    <h2 style="color: #D3AC4F; font-size: 28px; margin-bottom: 20px; text-align: center;">舞蹈艺术家</h2>
+                    <div style="color: #fff; line-height: 1.8;">
+                        <p style="margin-bottom: 15px;">舞蹈艺术家用优美的舞姿诠释着中华文化的魅力。</p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px;">
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">古典舞</h3>
+                                <p style="font-size: 14px;">传统古典舞的优雅身姿</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">民族舞</h3>
+                                <p style="font-size: 14px;">各民族舞蹈的独特魅力</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">现代舞</h3>
+                                <p style="font-size: 14px;">传统与现代的完美融合</p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                'painter': `
+                    <h2 style="color: #D3AC4F; font-size: 28px; margin-bottom: 20px; text-align: center;">绘画大师</h2>
+                    <div style="color: #fff; line-height: 1.8;">
+                        <p style="margin-bottom: 15px;">绘画大师用笔墨丹青描绘着中华文化的精髓。</p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px;">
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">国画艺术</h3>
+                                <p style="font-size: 14px;">传统国画的笔墨韵味</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">书法艺术</h3>
+                                <p style="font-size: 14px;">书法大师的墨宝真迹</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">篆刻艺术</h3>
+                                <p style="font-size: 14px;">篆刻艺术的精雕细琢</p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                '3d-experience': `
+                    <h2 style="color: #D3AC4F; font-size: 28px; margin-bottom: 20px; text-align: center;">3D体验</h2>
+                    <div style="color: #fff; line-height: 1.8;">
+                        <p style="margin-bottom: 15px;">通过3D技术，让您身临其境地体验传统文化。</p>
+                        <div style="text-align: center; margin: 30px 0;">
+                            <div style="background: rgba(255,255,255,0.1); padding: 40px; border-radius: 15px; display: inline-block;">
+                                <div style="font-size: 48px; margin-bottom: 20px;">🎮</div>
+                                <h3 style="color: #D3AC4F; margin-bottom: 15px;">3D文化体验</h3>
+                                <p style="margin-bottom: 20px;">点击开始体验3D文化之旅</p>
+                                <button style="
+                                    background: linear-gradient(45deg, #D3AC4F, #f0c040);
+                                    color: #000;
+                                    border: none;
+                                    padding: 12px 30px;
+                                    border-radius: 8px;
+                                    font-size: 16px;
+                                    cursor: pointer;
+                                    transition: all 0.3s ease;
+                                " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                                    开始体验
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                'vr-show': `
+                    <h2 style="color: #D3AC4F; font-size: 28px; margin-bottom: 20px; text-align: center;">VR展示</h2>
+                    <div style="color: #fff; line-height: 1.8;">
+                        <p style="margin-bottom: 15px;">戴上VR设备，走进虚拟的文化世界。</p>
+                        <div style="text-align: center; margin: 30px 0;">
+                            <div style="background: rgba(255,255,255,0.1); padding: 40px; border-radius: 15px; display: inline-block;">
+                                <div style="font-size: 48px; margin-bottom: 20px;">🥽</div>
+                                <h3 style="color: #D3AC4F; margin-bottom: 15px;">VR文化之旅</h3>
+                                <p style="margin-bottom: 20px;">沉浸式体验传统文化</p>
+                                <button style="
+                                    background: linear-gradient(45deg, #D3AC4F, #f0c040);
+                                    color: #000;
+                                    border: none;
+                                    padding: 12px 30px;
+                                    border-radius: 8px;
+                                    font-size: 16px;
+                                    cursor: pointer;
+                                    transition: all 0.3s ease;
+                                " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                                    进入VR世界
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                'interactive-game': `
+                    <h2 style="color: #D3AC4F; font-size: 28px; margin-bottom: 20px; text-align: center;">互动游戏</h2>
+                    <div style="color: #fff; line-height: 1.8;">
+                        <p style="margin-bottom: 15px;">通过有趣的游戏了解传统文化知识。</p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px;">
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; text-align: center;">
+                                <div style="font-size: 36px; margin-bottom: 10px;">🧩</div>
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">文化拼图</h3>
+                                <button style="
+                                    background: linear-gradient(45deg, #D3AC4F, #f0c040);
+                                    color: #000;
+                                    border: none;
+                                    padding: 8px 20px;
+                                    border-radius: 6px;
+                                    font-size: 14px;
+                                    cursor: pointer;
+                                    margin-top: 10px;
+                                ">开始游戏</button>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; text-align: center;">
+                                <div style="font-size: 36px; margin-bottom: 10px;">🎯</div>
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">知识问答</h3>
+                                <button style="
+                                    background: linear-gradient(45deg, #D3AC4F, #f0c040);
+                                    color: #000;
+                                    border: none;
+                                    padding: 8px 20px;
+                                    border-radius: 6px;
+                                    font-size: 14px;
+                                    cursor: pointer;
+                                    margin-top: 10px;
+                                ">开始答题</button>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; text-align: center;">
+                                <div style="font-size: 36px; margin-bottom: 10px;">🎨</div>
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">文化涂色</h3>
+                                <button style="
+                                    background: linear-gradient(45deg, #D3AC4F, #f0c040);
+                                    color: #000;
+                                    border: none;
+                                    padding: 8px 20px;
+                                    border-radius: 6px;
+                                    font-size: 14px;
+                                    cursor: pointer;
+                                    margin-top: 10px;
+                                ">开始涂色</button>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                'digital-exhibition': `
+                    <h2 style="color: #D3AC4F; font-size: 28px; margin-bottom: 20px; text-align: center;">数字展览</h2>
+                    <div style="color: #fff; line-height: 1.8;">
+                        <p style="margin-bottom: 15px;">数字化展示传统文化，让历史与现代科技完美结合。</p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px;">
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">虚拟博物馆</h3>
+                                <p style="font-size: 14px;">在线浏览珍贵文物</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">360°全景</h3>
+                                <p style="font-size: 14px;">全方位文化体验</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">AR展示</h3>
+                                <p style="font-size: 14px;">增强现实文化展示</p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                'architecture': `
+                    <h2 style="color: #D3AC4F; font-size: 28px; margin-bottom: 20px; text-align: center;">传统建筑</h2>
+                    <div style="color: #fff; line-height: 1.8;">
+                        <p style="margin-bottom: 15px;">中国传统建筑是中华文化的重要组成部分，体现了古人的智慧。</p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px;">
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">故宫建筑</h3>
+                                <p style="font-size: 14px;">明清皇家建筑群</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">苏州园林</h3>
+                                <p style="font-size: 14px;">江南园林艺术</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">徽派建筑</h3>
+                                <p style="font-size: 14px;">徽州民居特色</p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                'costume': `
+                    <h2 style="color: #D3AC4F; font-size: 28px; margin-bottom: 20px; text-align: center;">传统服饰</h2>
+                    <div style="color: #fff; line-height: 1.8;">
+                        <p style="margin-bottom: 15px;">传统服饰承载着深厚的文化内涵，是中华文化的重要载体。</p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px;">
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">汉服文化</h3>
+                                <p style="font-size: 14px;">汉族传统服饰</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">旗袍艺术</h3>
+                                <p style="font-size: 14px;">民国时期服饰</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">民族服饰</h3>
+                                <p style="font-size: 14px;">各民族特色服装</p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                'instrument': `
+                    <h2 style="color: #D3AC4F; font-size: 28px; margin-bottom: 20px; text-align: center;">传统乐器</h2>
+                    <div style="color: #fff; line-height: 1.8;">
+                        <p style="margin-bottom: 15px;">传统乐器是中华音乐文化的重要载体，承载着深厚的文化内涵。</p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px;">
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">古琴</h3>
+                                <p style="font-size: 14px;">中国最古老的乐器</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">古筝</h3>
+                                <p style="font-size: 14px;">传统弹拨乐器</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">二胡</h3>
+                                <p style="font-size: 14px;">民族拉弦乐器</p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                'craft': `
+                    <h2 style="color: #D3AC4F; font-size: 28px; margin-bottom: 20px; text-align: center;">传统工艺</h2>
+                    <div style="color: #fff; line-height: 1.8;">
+                        <p style="margin-bottom: 15px;">传统工艺是中华文化的重要组成部分，体现了古人的智慧。</p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px;">
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">陶瓷工艺</h3>
+                                <p style="font-size: 14px;">景德镇陶瓷</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">刺绣工艺</h3>
+                                <p style="font-size: 14px;">苏绣、湘绣</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">木雕工艺</h3>
+                                <p style="font-size: 14px;">东阳木雕</p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                'dance': `
+                    <h2 style="color: #D3AC4F; font-size: 28px; margin-bottom: 20px; text-align: center;">传统舞蹈</h2>
+                    <div style="color: #fff; line-height: 1.8;">
+                        <p style="margin-bottom: 15px;">传统舞蹈是中华文化的重要组成部分，体现了各民族的文化特色。</p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px;">
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">古典舞</h3>
+                                <p style="font-size: 14px;">传统古典舞蹈</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">民族舞</h3>
+                                <p style="font-size: 14px;">各民族舞蹈</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">民间舞</h3>
+                                <p style="font-size: 14px;">民间传统舞蹈</p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                'painting': `
+                    <h2 style="color: #D3AC4F; font-size: 28px; margin-bottom: 20px; text-align: center;">传统绘画</h2>
+                    <div style="color: #fff; line-height: 1.8;">
+                        <p style="margin-bottom: 15px;">传统绘画是中华文化的重要组成部分，体现了古人的艺术追求。</p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px;">
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">山水画</h3>
+                                <p style="font-size: 14px;">传统山水画</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">花鸟画</h3>
+                                <p style="font-size: 14px;">传统花鸟画</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">人物画</h3>
+                                <p style="font-size: 14px;">传统人物画</p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                'about': `
+                    <h2 style="color: #D3AC4F; font-size: 28px; margin-bottom: 20px; text-align: center;">关于我们</h2>
+                    <div style="color: #fff; line-height: 1.8;">
+                        <p style="margin-bottom: 15px;">我们致力于传承和弘扬中华优秀传统文化，让更多人了解中华文化的魅力。</p>
+                        <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; margin-top: 30px;">
+                            <h3 style="color: #D3AC4F; margin-bottom: 20px;">我们的使命</h3>
+                            <p style="margin-bottom: 15px;">通过数字化技术，让传统文化焕发新的生机，让更多人能够便捷地接触和学习中华文化。</p>
+                            <h3 style="color: #D3AC4F; margin-bottom: 20px;">我们的愿景</h3>
+                            <p style="margin-bottom: 15px;">成为中华文化数字化传播的引领者，让传统文化在现代社会中绽放光彩。</p>
+                        </div>
+                    </div>
+                `,
+                'contact': `
+                    <h2 style="color: #D3AC4F; font-size: 28px; margin-bottom: 20px; text-align: center;">联系方式</h2>
+                    <div style="color: #fff; line-height: 1.8;">
+                        <p style="margin-bottom: 15px;">如果您有任何问题或建议，欢迎联系我们。</p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px;">
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">📧 邮箱</h3>
+                                <p style="font-size: 14px;">contact@ctmsa.com</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">📞 电话</h3>
+                                <p style="font-size: 14px;">400-123-4567</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">📍 地址</h3>
+                                <p style="font-size: 14px;">北京市朝阳区文化街123号</p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                'help': `
+                    <h2 style="color: #D3AC4F; font-size: 28px; margin-bottom: 20px; text-align: center;">帮助中心</h2>
+                    <div style="color: #fff; line-height: 1.8;">
+                        <p style="margin-bottom: 15px;">在这里您可以找到常见问题的解答和使用指南。</p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px;">
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">使用指南</h3>
+                                <p style="font-size: 14px;">网站功能使用说明</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">常见问题</h3>
+                                <p style="font-size: 14px;">FAQ解答</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                                <h3 style="color: #D3AC4F; margin-bottom: 10px;">技术支持</h3>
+                                <p style="font-size: 14px;">技术问题咨询</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            };
+
+            return contents[pageType] || `
+                <h2 style="color: #D3AC4F; font-size: 28px; margin-bottom: 20px; text-align: center;">${title}</h2>
+                <div style="color: #fff; line-height: 1.8; text-align: center;">
+                    <p style="margin-bottom: 15px;">该功能正在开发中，敬请期待！</p>
+                    <div style="font-size: 48px; margin: 30px 0;">🚧</div>
+                    <p>我们正在努力为您打造更好的体验</p>
+                </div>
+            `;
+        }
+
+        // 用户菜单功能
+        const avatarIcon = document.getElementById('avatarIcon');
+        const userMenu = document.getElementById('userMenu');
+        const authModal = document.getElementById('authModal');
+        const authClose = document.getElementById('authClose');
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+        const switchToRegister = document.getElementById('switchToRegister');
+        const switchToLogin = document.getElementById('switchToLogin');
+        const loginBtn = document.getElementById('loginBtn');
+        const logoutBtn = document.getElementById('logoutBtn');
+        const profileBtn = document.getElementById('profileBtn');
+        const settingsBtn = document.getElementById('settingsBtn');
+        const userInfo = document.getElementById('userInfo');
+
+        let isLoggedIn = false;
+        let currentUser = null;
+
+        // 头像点击事件
+        avatarIcon.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (isLoggedIn) {
+                userMenu.classList.toggle('show');
+            } else {
+                authModal.classList.add('show');
+            }
+        });
+
+        // 关闭用户菜单
+        document.addEventListener('click', (e) => {
+            if (!avatarIcon.contains(e.target) && !userMenu.contains(e.target)) {
+                userMenu.classList.remove('show');
+            }
+        });
+
+        // 关闭模态框
+        authClose.addEventListener('click', () => {
+            authModal.classList.remove('show');
+        });
+
+        // 点击模态框外部关闭
+        authModal.addEventListener('click', (e) => {
+            if (e.target === authModal) {
+                authModal.classList.remove('show');
+            }
+        });
+
+        // 切换登录/注册表单
+        switchToRegister.addEventListener('click', () => {
+            loginForm.classList.remove('active');
+            registerForm.classList.add('active');
+        });
+
+        switchToLogin.addEventListener('click', () => {
+            registerForm.classList.remove('active');
+            loginForm.classList.add('active');
+        });
+
+        // 登录表单提交
+        document.getElementById('loginFormElement').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = e.target.querySelector('input[type="email"]').value;
+            const password = e.target.querySelector('input[type="password"]').value;
+            
+            // 模拟登录验证
+            if (email && password) {
+                loginUser({
+                    name: email.split('@')[0],
+                    email: email,
+                    avatar: '👤'
+                });
+            }
+        });
+
+        // 注册表单提交
+        document.getElementById('registerFormElement').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const username = e.target.querySelector('input[type="text"]').value;
+            const email = e.target.querySelector('input[type="email"]').value;
+            const password = e.target.querySelectorAll('input[type="password"]')[0].value;
+            const confirmPassword = e.target.querySelectorAll('input[type="password"]')[1].value;
+            
+            // 模拟注册验证
+            if (username && email && password && password === confirmPassword) {
+                registerUser({
+                    name: username,
+                    email: email,
+                    avatar: '👤'
+                });
+            }
+        });
+
+        // 登录用户
+        function loginUser(user) {
+            isLoggedIn = true;
+            currentUser = user;
+            
+            // 更新用户信息显示
+            userInfo.innerHTML = `
+                <div class="user-avatar">${user.avatar}</div>
+                <div class="user-name">${user.name}</div>
+                <div class="user-email">${user.email}</div>
+            `;
+            
+            // 更新菜单项
+            loginBtn.style.display = 'none';
+            profileBtn.style.display = 'block';
+            settingsBtn.style.display = 'block';
+            logoutBtn.style.display = 'block';
+            
+            // 关闭模态框
+            authModal.classList.remove('show');
+            
+            // 显示成功消息
+            showMessage('登录成功！', 'success');
+        }
+
+        // 注册用户
+        function registerUser(user) {
+            isLoggedIn = true;
+            currentUser = user;
+            
+            // 更新用户信息显示
+            userInfo.innerHTML = `
+                <div class="user-avatar">${user.avatar}</div>
+                <div class="user-name">${user.name}</div>
+                <div class="user-email">${user.email}</div>
+            `;
+            
+            // 更新菜单项
+            loginBtn.style.display = 'none';
+            profileBtn.style.display = 'block';
+            settingsBtn.style.display = 'block';
+            logoutBtn.style.display = 'block';
+            
+            // 关闭模态框
+            authModal.classList.remove('show');
+            
+            // 显示成功消息
+            showMessage('注册成功！欢迎加入我们的文化社区！', 'success');
+        }
+
+        // 退出登录
+        logoutBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            isLoggedIn = false;
+            currentUser = null;
+            
+            // 重置用户信息显示
+            userInfo.innerHTML = `
+                <div class="user-avatar">👤</div>
+                <div class="user-name">游客</div>
+                <div class="user-email">点击头像登录</div>
+            `;
+            
+            // 重置菜单项
+            loginBtn.style.display = 'block';
+            profileBtn.style.display = 'none';
+            settingsBtn.style.display = 'none';
+            logoutBtn.style.display = 'none';
+            
+            // 关闭用户菜单
+            userMenu.classList.remove('show');
+            
+            // 显示消息
+            showMessage('已退出登录', 'info');
+        });
+
+        // 显示消息提示
+        function showMessage(message, type = 'info') {
+            const messageDiv = document.createElement('div');
+            messageDiv.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#2196F3'};
+                color: white;
+                padding: 15px 20px;
+                border-radius: 8px;
+                z-index: 10001;
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            `;
+            messageDiv.textContent = message;
+            
+            document.body.appendChild(messageDiv);
+            
+            // 显示动画
+            setTimeout(() => {
+                messageDiv.style.transform = 'translateX(0)';
+            }, 100);
+            
+            // 自动隐藏
+            setTimeout(() => {
+                messageDiv.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    document.body.removeChild(messageDiv);
+                }, 300);
+            }, 3000);
+        }
+
+        // 键盘交互
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                enterButton.click();
+            }
+        });
+
+        // 触摸设备支持
+        if ('ontouchstart' in window) {
+            document.body.style.cursor = 'auto';
+            cursor.style.display = 'none';
+            cursorFollower.style.display = 'none';
+        }
+
+        // 背景图片随机动画
+        setInterval(() => {
+            const randomImage = bgImages[Math.floor(Math.random() * bgImages.length)];
+            randomImage.style.opacity = '0.6';
+            setTimeout(() => {
+                randomImage.style.opacity = '0.8';
+            }, 300);
+        }, 3000);
+    </script>
+</body>
+</html> 

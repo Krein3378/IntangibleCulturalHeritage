@@ -42,6 +42,12 @@ public class MainHomeFragment extends BaseFragment<MainHomeContract.Presenter> i
     private View mainHomeFunctionAcrobatics;
     private View mainHomeFunctionSkill;
     private View mainHomeFunctionFolklore;
+    private View mainHomeFunction3d;
+    private View mainHomeFunctionVr;
+    private View mainHomeFunctionAr;
+    private View mainHomeFunctionLearning;
+    private View mainHomeFunctionCommunity;
+    private View mainHomeFunctionExhibition;
 
     public static MainHomeFragment newInstance() {
         return new MainHomeFragment();
@@ -73,6 +79,12 @@ public class MainHomeFragment extends BaseFragment<MainHomeContract.Presenter> i
         mainHomeFunctionAcrobatics = findView(R.id.main_home_function_acrobatics);
         mainHomeFunctionSkill = findView(R.id.main_home_function_skill);
         mainHomeFunctionFolklore = findView(R.id.main_home_function_folklore);
+        mainHomeFunction3d = findView(R.id.main_home_function_3d);
+        mainHomeFunctionVr = findView(R.id.main_home_function_vr);
+        mainHomeFunctionAr = findView(R.id.main_home_function_ar);
+        mainHomeFunctionLearning = findView(R.id.main_home_function_learning);
+        mainHomeFunctionCommunity = findView(R.id.main_home_function_community);
+        mainHomeFunctionExhibition = findView(R.id.main_home_function_exhibition);
 
     }
 
@@ -95,6 +107,12 @@ public class MainHomeFragment extends BaseFragment<MainHomeContract.Presenter> i
         mainHomeFunctionAcrobatics.setOnClickListener(this);
         mainHomeFunctionSkill.setOnClickListener(this);
         mainHomeFunctionFolklore.setOnClickListener(this);
+        mainHomeFunction3d.setOnClickListener(this);
+        mainHomeFunctionVr.setOnClickListener(this);
+        mainHomeFunctionAr.setOnClickListener(this);
+        mainHomeFunctionLearning.setOnClickListener(this);
+        mainHomeFunctionCommunity.setOnClickListener(this);
+        mainHomeFunctionExhibition.setOnClickListener(this);
     }
 
     @Override
@@ -133,6 +151,20 @@ public class MainHomeFragment extends BaseFragment<MainHomeContract.Presenter> i
         } else if (v.getId() == mainHomeFunctionFolklore.getId()) {
             mainFragment.mainBottomView.setSelectedItemId(R.id.main_bottom_news);
             mainFragment.newsFragment.mainNewsViewpager.setCurrentItem(9, true);
+        } else if (v.getId() == mainHomeFunction3d.getId()) {
+            // 启动3D展示页面
+            startActivity(new android.content.Intent(activity, com.xiaoyv.framework.threeD.ThreeDDisplayActivity.class));
+        } else if (v.getId() == mainHomeFunctionVr.getId()) {
+            ToastUtils.showShort("VR体验功能开发中...");
+        } else if (v.getId() == mainHomeFunctionAr.getId()) {
+            ToastUtils.showShort("AR体验功能开发中...");
+        } else if (v.getId() == mainHomeFunctionLearning.getId()) {
+            // 启动文化学习页面
+            startActivity(new android.content.Intent(activity, com.xiaoyv.framework.learning.CultureLearningActivity.class));
+        } else if (v.getId() == mainHomeFunctionCommunity.getId()) {
+            ToastUtils.showShort("文化社区功能开发中...");
+        } else if (v.getId() == mainHomeFunctionExhibition.getId()) {
+            ToastUtils.showShort("文化展览功能开发中...");
         }
 
     }

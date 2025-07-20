@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="author" content="http://www.fractal-technology.com">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>世界的记忆中国传统音乐录音档案中国艺术研究院-专栏</title>
+    <meta name="keywords" content="世界的记忆中国传统音乐录音档案中国艺术研究院">
+    <meta name="description" content="世界的记忆中国传统音乐录音档案中国艺术研究院">
+    <script type="text/javascript">
+      if (!window.matchMedia) {
+        var el = document.createElement("div");
+        el.style.cssText =
+          "position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: #575757; z-index: 999999;";
+        el.innerHTML =
+          '<div style="position: absolute; top: 40%; left: 0; right: 0; margin: auto; width: 80%; font-family: Microsoft YaHei; font-size: 2em; font-weight: bold; text-align: center; color: #fff;">您当前使用的浏览器版本过低，<br>建议尽快升级您的浏览器，以获得更好的浏览体验！</div>';
+        document.documentElement.appendChild(el);
+      }
+    </script>
+    <link rel="stylesheet" href="../css/vendor.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/hrb.css">
+  </head>
+  <body>
+    <div style="display: none"><img src="../image/share.png" alt=""></div>
+    <div class="topping-mod"><img src="../image/lys/png1.png" alt=""></div>
+    <div id="pop"></div>
+    <div id="app" class="x-layout">
+      <x-header ref="header" class="x-header" pagetype="column"></x-header>
+      <div class="x-container">
+        <div class="pulpit column">
+          <div class="pub_banner" v-if="Banners.length>0">
+            <div class="slick-item" v-for="(item,index) in Banners" :key="index">
+              <a :href="item.link == '' ? 'javascript:;' : item.link" :target="item.link == '' ? '':'_blank'" :style="item.link == '' ? 'cursor: default':'' ">
+                <div class="img" :style="'background-image: url('+item.pic+')'"></div>
+              </a>
+            </div>
+          </div>
+
+          <div class="cont">
+            <div class="x-wrap">
+              <div class="title"><div class="t">专栏</div></div>
+              <div class="box1">
+                <div class="pub_search">
+                  <pub_search v-on:search="search" v-bind:defkeyword="keyword"></pub_search>
+                  <hotword v-on:search="search" v-bind:type="5"></hotword>
+                </div>
+              </div>
+
+              <div class="box2">
+                <div class="pub_tit">
+                  <div class="tit">文章推荐</div>
+                  <a :href="'/column/column_list.html'" class="more">更多</a>
+                </div>
+                <div class="pub_list1">
+                  <articledetails v-for="(item,index) in Lecture" :key="index" v-bind:item="item" v-bind:isclass="false"></articledetails>
+                </div>
+              </div>
+
+              <div class="box3">
+                <div class="pub_tit">
+                  <div class="tit">作者</div>
+                  <a :href="'/column/column_author.html'" class="more">更多</a>
+                </div>
+                <div class="pub_list2">
+                  <authordetails v-for="(item,index) in list" :key="index" v-bind:item="item"></authordetails>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <x-footer></x-footer>
+    </div>
+    <script src="../utils/utils/lazyload.js"></script>
+    <script src="../utils/utils/lazyloadconfig.js"></script>
+    <script>
+      LazyLoad.js(lazyloadconfig, function () {
+        Vue.use(VueLazyload);
+        new Vue({
+          el: "#app",
+          data: {
+            title: "文章",
+            list: [],
+            Lecture: [], //文章推荐
+            count: 0, //总页码
+            Banners: [], //轮播图
+            // pagesize: 9, //当前页码
+            // currentPage: 1, //当前页码
+            // diypage: "", //自定义页码
+            countarry: { countarry: [], currentPage: 1 }, //分页
+            HotWords: [], //热词
+
+            keyword: "", //搜索关键词
+            searchkeyword: "", //搜索关键词
+            time: 0, //排序索引
+            clicks: 0, //排序索引
+            orderwhere: [undefined, "up", "down"], //排序规则
+            // ismore: false,
+          },
+          mounted() {
+            this.getlist();
+
+            this.getLecture();
+            this.getBanners();
+          },
+          methods: {
+            search(key) {
+              if (key && typeof key == "string") {
+                this.keyword = key;
+              } else {
+                this.searchkeyword = "";
+                this.keyword = "";
+              }
+              this.searchkeyword = this.keyword;
+              window.location.href =
+                "/column/column_result.html#/?keyword=" + this.keyword;
+            },
+            setpagesize(num) {
+              this.pagesize = num;
+              this.getlist();
+            },
+            getlist(page) {
+              let where = { pagesize: this.pagesize, page };
+              if (this.searchkeyword) {
+                where.name = this.searchkeyword;
+              }
+              send(column.getWriterRecommendList, "get", where)
+                .then((res) => {
+                  this.list = res;
+                  console.log(res);
+                })
+                .catch((error) => {
+                  console.log(error);
+                });
+            },
+
+            getLecture() {
+              send(column.getListarticle, "get", {
+                type: 1,
+              })
+                .then((res) => {
+                  this.Lecture = res;
+                })
+                .catch((error) => {
+                  console.log(error);
+                });
+            },
+            getBanners() {
+              send(config.getBanners, "get", {
+                pathKey: "专栏",
+              })
+                .then((res) => {
+                  this.Banners = res.data;
+                  setTimeout(() => {
+                    $(".pub_banner").slick({
+                      autoplay: true,
+                      dots: true,
+                      arrows: true,
+                      speed: 1000,
+                    });
+                  }, 0);
+                })
+                .catch((error) => {
+                  console.log(error);
+                });
+            },
+          },
+        });
+        //Devend
+      });
+    </script>
+  <script src="../js/hm.js"></script>
+</body>
+</html>

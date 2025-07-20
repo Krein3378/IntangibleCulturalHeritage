@@ -1,0 +1,388 @@
+﻿<!DOCTYPE html>
+<!--<auther>李</auther>-->
+<!--<create>1623225116</create>-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="author" content="http://www.fractal-technology.com">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>世界的记忆中国传统音乐录音档案中国艺术研究院-专题</title>
+    <meta name="keywords" content="世界的记忆中国传统音乐录音档案中国艺术研究院">
+    <meta name="description" content="世界的记忆中国传统音乐录音档案中国艺术研究院">
+    <script type="text/javascript">
+      if (!window.matchMedia) {
+        var el = document.createElement("div");
+        el.style.cssText =
+          "position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: #575757; z-index: 999999;";
+        el.innerHTML =
+          '<div style="position: absolute; top: 40%; left: 0; right: 0; margin: auto; width: 80%; font-family: Microsoft YaHei; font-size: 2em; font-weight: bold; text-align: center; color: #fff;">您当前使用的浏览器版本过低，<br>建议尽快升级您的浏览器，以获得更好的浏览体验！</div>';
+        document.documentElement.appendChild(el);
+      }
+    </script>
+    <link rel="stylesheet" href="../css/vendor.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/hrb.css">
+    <style></style>
+  </head>
+  <body>
+    <div style="display: none"><img src="../image/share.png" alt=""></div>
+    <div class="topping-mod"><img src="../image/lys/png1.png" alt=""></div>
+    <div id="pop"></div>
+    <div id="app" class="x-layout">
+      <x-header ref="header" class="x-header" pagetype="special"></x-header>
+
+      <div class="x-container">
+        <div class="pulpit">
+          <div class="pub_banner" v-if="Banners.length>0">
+            <div class="slick-item" v-for="(item,index) in Banners" :key="index" class="slick-item">
+              <a :href="item.link == '' ? 'javascript:;' : item.link" :target="item.link == '' ? '':'_blank'" :style="item.link == '' ? 'cursor: default':'' ">
+                <div class="img" :style="'background-image: url('+item.pic+')'"></div>
+              </a>
+            </div>
+          </div>
+          <div class="cont" style="padding: 185px 0 100px">
+            <div class="x-wrap">
+              <div class="title"><div class="t">专题</div></div>
+              <div class="box1">
+                <div class="pub_search">
+                  <pub_search v-on:search="search" v-bind:defkeyword="keyword"></pub_search>
+                  <hotword v-on:search="search" v-bind:type="3"></hotword>
+                </div>
+              </div>
+
+              <div class="special_subject2">
+                <div class="pub_tit">
+                  <div class="sort">
+                    <div @click="order('clicks')" class="li l">
+                      <a href="javascript:;">播放量</a>
+                    </div>
+                    <div @click="order('coll')" class="li ll">
+                      <a href="javascript:;">收藏量</a>
+                    </div>
+                    <div @click="order('time')" class="li lll">
+                      <a href="javascript:;">发布时间</a>
+                    </div>
+
+                    <!-- <div class="li l"><a href="javascript:;"></a></div>
+										<div class="li ll"><a href="javascript:;"></a></div>
+										<div class="li lll"><a href="javascript:;"></a></div> -->
+                  </div>
+                </div>
+                <!--style="padding: 0 38px 0 88px" -->
+                <div class="pub_list2">
+                  <special v-for="(item,index) in list" :key="index" v-bind:item="item" v-bind:isclass="false"></special>
+                </div>
+                <page v-bind:countarry="countarry" v-bind:pagesize="pagesize" v-bind:pageskey="4" v-bind:currentpage="currentPage" v-bind:count="count" v-on:more="more" v-on:showalert="(title)=>{
+                        this.$refs.header.showalert(title, true);
+                      }" v-on:jumppage="jumppage" v-on:pagesize="setData" v-on:getlist="getlist"></page>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <x-footer></x-footer>
+    </div>
+    <script src="../utils/utils/lazyload.js"></script>
+    <script src="../utils/utils/lazyloadconfig.js"></script>
+    <script>
+      LazyLoad.js(lazyloadconfig, function () {
+        Vue.use(VueLazyload);
+        new Vue({
+          el: "#app",
+          router,
+          data: {
+            title: "专题",
+            list: [],
+            count: 0, //总页码
+            Banners: [], //轮播图
+            pagesize: 12, //当前页码
+            currentPage: 1, //当前页码
+            diypage: "", //自定义页码
+            countarry: { countarry: [], currentPage: 1 }, //分页
+            HotWords: [], //热词
+            keyword: "", //搜索关键词
+            searchkeyword: "", //搜索关键词
+            time: 0, //排序索引
+            clicks: 0, //排序索引
+            coll: 0,
+            orderwhere: [undefined, "up", "down"], //排序规则
+            ismore: false,
+          },
+          mounted() {
+            const { keyword,page } = this.$route.query;
+            this.keyword = keyword ? keyword : "";
+            this.searchkeyword = this.keyword;
+            this.getlist(page?page:1);
+            this.getBanners();
+            $(".select-mod").each(function () {
+              return;
+              var i = $(this),
+                t = i.find(".select-trigger"),
+                e = i.find(".select-bar"),
+                o = i.find(".select-btn"),
+                s = i.find(".select-val"),
+                n = i.find(".select-cont"),
+                a = i.find(".select-opts"),
+                r = i.find(".select-native"),
+                l = !$.utils.is_undefined(i.attr("select-hover")),
+                c = [];
+              a.xScroll({ preventDefault: !0 }),
+                0 < t.length
+                  ? s.is("input") &&
+                    !o.hasClass("select-trigger") &&
+                    (t.removeClass("select-trigger"),
+                    (t = o.addClass("select-trigger")))
+                  : (t = (s.is("input") ? o : e).addClass("select-trigger")),
+                0 < r.length &&
+                  (0 < n.find(".cur").length
+                    ? (r.find("option").eq(n.find(".cur").index())[0].selected =
+                        !0)
+                    : (r.find("option:first")[0].selected = !0)),
+                0 < n.find(".cur").length &&
+                  (s.is("input")
+                    ? s.val(n.find(".cur").text())
+                    : s.text(n.find(".cur").text()),
+                  s.hasClass("placeholder") && s.removeClass("placeholder")),
+                t.on("click", function (t) {
+                  i.hasClass("sc-show")
+                    ? i.removeClass("sc-show")
+                    : i.addClass("sc-show").removeClass("sq-show");
+                }),
+                i.on("mouseenter", function () {
+                  $.utils.is_mobile ||
+                    (l &&
+                      !i.hasClass("sc-show") &&
+                      i.addClass("sc-show").removeClass("sq-show"));
+                }),
+                i.on("mouseleave", function () {
+                  $.utils.is_mobile ||
+                    (l && i.hasClass("sc-show") && i.removeClass("sc-show"));
+                }),
+                i.on("touchmove", function (t) {
+                  t.stopPropagation();
+                }),
+                $(document).on("click", function (t) {
+                  (i.hasClass("sc-show") || i.hasClass("sq-show")) &&
+                    (i.is(t.target) ||
+                      0 !== i.has(t.target).length ||
+                      i.removeClass("sc-show sq-show"));
+                }),
+                r.on("click", function (t) {
+                  t.stopPropagation();
+                }),
+                r.on("change", function () {
+                  0 < this.selectedIndex &&
+                    i
+                      .find(".select-item")
+                      .eq(this.selectedIndex - 1)
+                      .trigger("click");
+                }),
+                i.on("click", ".select-item", function () {
+                  var t = $(this),
+                    e = t.text();
+                  t.hasClass("cur") ||
+                    (i.find(".select-item").removeClass("cur"),
+                    t.addClass("cur"),
+                    i.removeClass("sc-show sq-show"),
+                    s.is("input") ? s.val(e) : s.text(e),
+                    s.hasClass("placeholder") && s.removeClass("placeholder"),
+                    $.utils.fireCallbacks(i, c, [t]));
+                }),
+                s.on("focus", function () {
+                  var t = $(this);
+                  i.removeClass("sc-show"),
+                    "" !== t.val() &&
+                      (i.hasClass("sq-show") || i.addClass("sq-show"));
+                }),
+                s.on("input", function () {
+                  "" !== $(this).val()
+                    ? i.hasClass("sq-show") || i.addClass("sq-show")
+                    : i.hasClass("sq-show") && i.removeClass("sq-show"),
+                    0 < i.find(".cur").length &&
+                      $(this).val() !== i.find(".cur").text() &&
+                      i.find(".cur").removeClass("cur");
+                }),
+                i.on("select", function (t, e) {
+                  return (
+                    t.stopPropagation(),
+                    $.utils.is_function(e)
+                      ? c.push(e)
+                      : $.utils.is_number(e) &&
+                        i.find(".select-item").eq(e).trigger("click"),
+                    c
+                  );
+                }),
+                i.on("reitem", function (t, e) {
+                  t.stopPropagation(), i.find(".select-item").replaceWith(e);
+                });
+            });
+          },
+          methods: {
+            transform(num) {
+              return transform(num);
+            },
+            toChinesNum(num) {
+              return toChinesNum(num);
+            },
+            more(currentPage) {
+              this.ismore = true;
+              this.getlist(currentPage);
+              setTimeout(() => {
+                this.ismore = false;
+              }, 1500);
+            },
+            setData({ key, index }) {
+              this[key] = index;
+              this.getlist(1);
+            },
+
+            jumppage(diypage) {
+              if (diypage > this.count) {
+                diypage = this.count;
+              }
+              this.getlist(diypage);
+            },
+            order(e) {
+              switch (e) {
+                case "time":
+                  this.clicks = 0;
+                  this.coll = 0;
+                  break;
+                case "coll":
+                  this.clicks = 0;
+                  this.time = 0;
+                  break;
+                case "clicks":
+                  this.time = 0;
+                  this.coll = 0;
+                  break;
+              }
+              this[e]++;
+              this[e] = this[e] > 3 ? 1 : this[e];
+              console.log(this[e]);
+              this.getlist(1);
+            },
+
+            search(key) {
+              if (key && typeof key == "string") {
+                this.keyword = key;
+              } else {
+                this.searchkeyword = "";
+                this.keyword = "";
+              }
+              this.searchkeyword = this.keyword;
+              window.location.href =
+                "/special/special_result.html#/?keyword=" + this.keyword;
+            },
+            setpagesize(num) {
+              this.pagesize = num;
+              this.getlist(1);
+            },
+            getlist(page) {
+              let play_num = this.orderwhere[this.clicks];
+              let ctime = this.orderwhere[this.time];
+              let collection_num = this.orderwhere[this.coll];
+              let where = {
+                pagesize: this.pagesize,
+                page,
+                play_num,
+                collection_num,
+                ctime,
+              };
+              if (this.searchkeyword) {
+                where.name = this.searchkeyword;
+              }
+              send(special.getSpecialList, "get", where)
+                .then((res) => {
+                  this.currentPage = page;
+                  this.count = res.last_page * 1;
+                  if (this.ismore) {
+                    this.list = this.list.concat(res.list);
+                  } else {
+                    this.list = res.list;
+                  }
+                  setCurrentUrl( this.currentPage?this.currentPage:1)
+                  this.countarry = getpages(this.count, this.currentPage);
+                  console.log(this.countarry);
+                })
+                .catch((error) => {
+                  console.log(error);
+                });
+            },
+
+            getBanners() {
+              send(config.getBanners, "get", {
+                pathKey: "专题",
+              })
+                .then((res) => {
+                  this.Banners = res.data;
+                  setTimeout(() => {
+                    $(".pub_banner").slick({
+                      autoplay: true,
+                      dots: true,
+                      arrows: true,
+                      speed: 1000,
+                    });
+                  }, 0);
+                })
+                .catch((error) => {
+                  console.log(error);
+                });
+            },
+          },
+        });
+        //Devend
+        $(".sort .l").click(function () {
+          if ($(".sort .l").hasClass("li")) {
+            $(".sort .l").removeClass("li");
+            $(".sort .l").addClass("l1");
+          } else if ($(".sort .l").hasClass("l1")) {
+            $(".sort .l").removeClass("l1");
+            $(".sort .l").addClass("l2");
+          } else if ($(".sort .l").hasClass("l2")) {
+            $(".sort .l").removeClass("l2");
+            $(".sort .l").addClass("li");
+          }
+          $(".sort .ll").removeClass("l1").removeClass("l2").addClass("li");
+          $(".sort .lll").removeClass("l1").removeClass("l2").addClass("li");
+        });
+        $(".sort .ll").click(function () {
+          if ($(".sort .ll").hasClass("li")) {
+            $(".sort .ll").removeClass("li");
+            $(".sort .ll").addClass("l1");
+          } else if ($(".sort .ll").hasClass("l1")) {
+            $(".sort .ll").removeClass("l1");
+            $(".sort .ll").addClass("l2");
+          } else if ($(".sort .ll").hasClass("l2")) {
+            $(".sort .ll").removeClass("l2");
+            $(".sort .ll").addClass("li");
+          }
+          $(".sort .l").removeClass("l1").removeClass("l2").addClass("li");
+          $(".sort .lll").removeClass("l1").removeClass("l2").addClass("li");
+        });
+        $(".sort .lll").click(function () {
+          if ($(".sort .lll").hasClass("li")) {
+            $(".sort .lll").removeClass("li");
+            $(".sort .lll").addClass("l1");
+          } else if ($(".sort .lll").hasClass("l1")) {
+            $(".sort .lll").removeClass("l1");
+            $(".sort .lll").addClass("l2");
+          } else if ($(".sort .lll").hasClass("l2")) {
+            $(".sort .lll").removeClass("l2");
+            $(".sort .lll").addClass("li");
+          }
+          $(".sort .ll").removeClass("l1").removeClass("l2").addClass("li");
+          $(".sort .l").removeClass("l1").removeClass("l2").addClass("li");
+        });
+      });
+    </script>
+
+    <!-- endinject -->
+  <script src="../js/hm.js"></script>
+</body>
+</html>

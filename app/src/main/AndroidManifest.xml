@@ -25,6 +25,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <activity android:name="com.xiaoyv.framework.threeD.ThreeDDisplayActivity" />
+        <activity android:name="com.xiaoyv.framework.learning.CultureLearningActivity" />
     </application>
 
 </manifest>

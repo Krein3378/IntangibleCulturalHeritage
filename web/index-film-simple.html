@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国传统文化档案 - 世界的记忆</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background: #000;
+            color: #fff;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        /* 胶片效果样式 */
+        .film-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .film-reel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .film-frame {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+
+        .film-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .film-frame::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.1) 2%, transparent 4%),
+                linear-gradient(90deg, transparent 96%, rgba(0,0,0,0.1) 98%, transparent 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .film-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: #fff;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .film-title {
+            font-size: 4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            letter-spacing: 0.5em;
+            animation: filmGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes filmGlow {
+            from { text-shadow: 0 0 20px rgba(255, 255, 255, 0.3); }
+            to { text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.4); }
+        }
+
+        .film-subtitle {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .film-desc {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .film-btn {
+            background: linear-gradient(45deg, #fff, #f0f0f0);
+            color: #000;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .film-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .film-btn:hover::before {
+            left: 100%;
+        }
+
+        .film-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+        }
+
+        /* 胶片孔效果 */
+        .film-holes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 4;
+        }
+
+        .film-hole {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #000;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .film-hole:nth-child(1) { top: 10%; left: 5%; }
+        .film-hole:nth-child(2) { top: 10%; right: 5%; }
+        .film-hole:nth-child(3) { top: 50%; left: 5%; }
+        .film-hole:nth-child(4) { top: 50%; right: 5%; }
+        .film-hole:nth-child(5) { bottom: 10%; left: 5%; }
+        .film-hole:nth-child(6) { bottom: 10%; right: 5%; }
+
+        /* 滚动指示器 */
+        .scroll-indicator {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .scroll-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .scroll-dot.active {
+            background: #fff;
+            transform: scale(1.2);
+        }
+
+        /* 胶片边缘效果 */
+        .film-edge {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .film-edge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, transparent 100%);
+        }
+
+        .film-edge::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, transparent 100%);
+        }
+
+        /* 加载动画 */
+        .film-loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 1s ease;
+        }
+
+        .film-loading.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top: 3px solid #fff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .film-title {
+                font-size: 2.5rem;
+                letter-spacing: 0.3em;
+            }
+            
+            .film-subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .film-desc {
+                font-size: 1rem;
+            }
+            
+            .scroll-indicator {
+                right: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 加载动画 -->
+    <div class="film-loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- 胶片容器 -->
+    <div class="film-container">
+        <!-- 胶片卷轴 -->
+        <div class="film-reel" id="filmReel">
+            <!-- 第一帧 - 主标题 -->
+            <div class="film-frame" style="background-image: url('www.ctmsa-cnaa.com/image/lyj/gf2.png');">
+                <div class="film-content">
+                    <h1 class="film-title">世界的记忆</h1>
+                    <h2 class="film-subtitle">Memory of the World</h2>
+                    <p class="film-desc">中国传统文化档案</p>
+                    <p class="film-desc">Chinese Traditional Culture Archives</p>
+                    <button class="film-btn" onclick="enterSite()">进入</button>
+                </div>
+                <div class="film-holes">
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                </div>
+                <div class="film-edge"></div>
+            </div>
+
+            <!-- 第二帧 - 传统建筑 -->
+            <div class="film-frame" style="background-image: url('www.ctmsa-cnaa.com/image/lyj/gf3.png');">
+                <div class="film-content">
+                    <h1 class="film-title">传统建筑</h1>
+                    <h2 class="film-subtitle">Traditional Architecture</h2>
+                    <p class="film-desc">探索古代建筑的精美结构与文化内涵</p>
+                    <p class="film-desc">传承千年的建筑智慧</p>
+                </div>
+                <div class="film-holes">
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                </div>
+                <div class="film-edge"></div>
+            </div>
+
+            <!-- 第三帧 - 传统服饰 -->
+            <div class="film-frame" style="background-image: url('www.ctmsa-cnaa.com/image/lyj/gf4.png');">
+                <div class="film-content">
+                    <h1 class="film-title">传统服饰</h1>
+                    <h2 class="film-subtitle">Traditional Costumes</h2>
+                    <p class="film-desc">体验传统服饰的华丽设计与工艺技巧</p>
+                    <p class="film-desc">华服之美，文化之魂</p>
+                </div>
+                <div class="film-holes">
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                </div>
+                <div class="film-edge"></div>
+            </div>
+
+            <!-- 第四帧 - 传统乐器 -->
+            <div class="film-frame" style="background-image: url('www.ctmsa-cnaa.com/image/lyj/gf5.png');">
+                <div class="film-content">
+                    <h1 class="film-title">传统乐器</h1>
+                    <h2 class="film-subtitle">Traditional Instruments</h2>
+                    <p class="film-desc">聆听传统乐器的美妙音色与演奏技巧</p>
+                    <p class="film-desc">天籁之音，传承千年</p>
+                </div>
+                <div class="film-holes">
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                </div>
+                <div class="film-edge"></div>
+            </div>
+
+            <!-- 第五帧 - 传统工艺 -->
+            <div class="film-frame" style="background-image: url('www.ctmsa-cnaa.com/image/lyj/gf6.png');">
+                <div class="film-content">
+                    <h1 class="film-title">传统工艺</h1>
+                    <h2 class="film-subtitle">Traditional Crafts</h2>
+                    <p class="film-desc">了解传统工艺的制作过程与技艺传承</p>
+                    <p class="film-desc">匠心独运，技艺精湛</p>
+                </div>
+                <div class="film-holes">
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                </div>
+                <div class="film-edge"></div>
+            </div>
+
+            <!-- 第六帧 - 传统舞蹈 -->
+            <div class="film-frame" style="background-image: url('www.ctmsa-cnaa.com/image/lyj/gf7.png');">
+                <div class="film-content">
+                    <h1 class="film-title">传统舞蹈</h1>
+                    <h2 class="film-subtitle">Traditional Dance</h2>
+                    <p class="film-desc">感受传统舞蹈的优美动作与文化内涵</p>
+                    <p class="film-desc">舞姿翩翩，文化传承</p>
+                </div>
+                <div class="film-holes">
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                </div>
+                <div class="film-edge"></div>
+            </div>
+
+            <!-- 第七帧 - 传统绘画 -->
+            <div class="film-frame" style="background-image: url('www.ctmsa-cnaa.com/image/lyj/gf8.png');">
+                <div class="film-content">
+                    <h1 class="film-title">传统绘画</h1>
+                    <h2 class="film-subtitle">Traditional Painting</h2>
+                    <p class="film-desc">欣赏传统绘画的艺术魅力与技法传承</p>
+                    <p class="film-desc">丹青妙笔，意境深远</p>
+                </div>
+                <div class="film-holes">
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                </div>
+                <div class="film-edge"></div>
+            </div>
+
+            <!-- 第八帧 - 结束页 -->
+            <div class="film-frame" style="background-image: url('www.ctmsa-cnaa.com/image/lyj/gf9.png');">
+                <div class="film-content">
+                    <h1 class="film-title">传承文化</h1>
+                    <h2 class="film-subtitle">Cultural Heritage</h2>
+                    <p class="film-desc">弘扬传统，守护文明</p>
+                    <p class="film-desc">Preserve Tradition, Protect Civilization</p>
+                    <button class="film-btn" onclick="enterSite()">开始探索</button>
+                </div>
+                <div class="film-holes">
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                </div>
+                <div class="film-edge"></div>
+            </div>
+        </div>
+
+        <!-- 滚动指示器 -->
+        <div class="scroll-indicator" id="scrollIndicator">
+            <div class="scroll-dot active" data-index="0"></div>
+            <div class="scroll-dot" data-index="1"></div>
+            <div class="scroll-dot" data-index="2"></div>
+            <div class="scroll-dot" data-index="3"></div>
+            <div class="scroll-dot" data-index="4"></div>
+            <div class="scroll-dot" data-index="5"></div>
+            <div class="scroll-dot" data-index="6"></div>
+            <div class="scroll-dot" data-index="7"></div>
+        </div>
+    </div>
+
+    <script>
+        // 页面加载完成后隐藏加载动画
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelector('.film-loading').classList.add('hidden');
+            }, 1000);
+        });
+
+        // 胶片滚动功能
+        const filmReel = document.getElementById('filmReel');
+        const scrollDots = document.querySelectorAll('.scroll-dot');
+        let currentFrame = 0;
+        const totalFrames = 8;
+        let isScrolling = false;
+
+        // 更新胶片位置
+        function updateFilmPosition() {
+            filmReel.style.transform = `translateY(-${currentFrame * 100}vh)`;
+            
+            // 更新指示器
+            scrollDots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentFrame);
+            });
+        }
+
+        // 滚动到指定帧
+        function scrollToFrame(frameIndex) {
+            if (frameIndex < 0) frameIndex = 0;
+            if (frameIndex >= totalFrames) frameIndex = totalFrames - 1;
+            
+            currentFrame = frameIndex;
+            updateFilmPosition();
+        }
+
+        // 鼠标滚轮事件
+        let wheelTimeout;
+        window.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            
+            if (isScrolling) return;
+            
+            clearTimeout(wheelTimeout);
+            isScrolling = true;
+            
+            if (e.deltaY > 0) {
+                // 向下滚动
+                scrollToFrame(currentFrame + 1);
+            } else {
+                // 向上滚动
+                scrollToFrame(currentFrame - 1);
+            }
+            
+            wheelTimeout = setTimeout(() => {
+                isScrolling = false;
+            }, 800);
+        }, { passive: false });
+
+        // 点击指示器
+        scrollDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                scrollToFrame(index);
+            });
+        });
+
+        // 键盘事件
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+                e.preventDefault();
+                scrollToFrame(currentFrame + 1);
+            } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+                e.preventDefault();
+                scrollToFrame(currentFrame - 1);
+            } else if (e.key === 'Home') {
+                e.preventDefault();
+                scrollToFrame(0);
+            } else if (e.key === 'End') {
+                e.preventDefault();
+                scrollToFrame(totalFrames - 1);
+            }
+        });
+
+        // 触摸事件支持
+        let touchStartY = 0;
+        let touchEndY = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+
+        document.addEventListener('touchend', (e) => {
+            touchEndY = e.changedTouches[0].clientY;
+            const diff = touchStartY - touchEndY;
+            
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    // 向上滑动
+                    scrollToFrame(currentFrame + 1);
+                } else {
+                    // 向下滑动
+                    scrollToFrame(currentFrame - 1);
+                }
+            }
+        }, { passive: true });
+
+        // 进入网站
+        function enterSite() {
+            // 添加退出动画
+            document.body.style.transition = 'opacity 1s ease';
+            document.body.style.opacity = '0';
+            
+            setTimeout(() => {
+                // 跳转到原始网站
+                window.location.href = 'index.html';
+            }, 1000);
+        }
+
+        // 自动播放（可选）
+        let autoPlayInterval;
+        
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(() => {
+                if (currentFrame < totalFrames - 1) {
+                    scrollToFrame(currentFrame + 1);
+                } else {
+                    scrollToFrame(0);
+                }
+            }, 5000);
+        }
+        
+        function stopAutoPlay() {
+            clearInterval(autoPlayInterval);
+        }
+
+        // 鼠标移动时停止自动播放
+        document.addEventListener('mousemove', stopAutoPlay);
+        document.addEventListener('wheel', stopAutoPlay);
+        document.addEventListener('touchstart', stopAutoPlay);
+
+        // 5秒后开始自动播放
+        setTimeout(startAutoPlay, 5000);
+    </script>
+</body>
+</html> 
